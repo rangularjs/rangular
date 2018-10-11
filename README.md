@@ -11,5 +11,5 @@ Rangular is a reusable library from Ranis for building web applications.It is ba
 * Install Typescript npm i -g typescript
 * Install TSLint npm install -g tslint
 * Install Protractor for e2e testing npm install -g protractor
-
-
+* Install Node packages npm run reinstall (or npm run reinstall:latest)
+* Run local build npm run serve or npm run serve:prod

@@ -1,8 +1,17 @@
 {
   "name": "rangular-app",
+  "description": "Ranis components built on Agular Material",
   "version": "1.0.0",
+  "keywords": [
+    "angular",
+    "ranis",
+    "material",
+    "components"
+  ],
   "scripts": {
     "ng": "ng",
+    "serve": "ng serve",
+    "serve:prod": "ng serve --aot --prod --source-map=false --optimization",
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
