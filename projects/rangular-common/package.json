@@ -1,0 +1,20 @@
+{
+  "name": "rangular-common",
+  "description": "Ranis common classes for Agular",
+  "version": "0.0.1",
+  "keywords": [
+    "angular",
+    "common"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rangularjs/rangular"
+  },
+  "homepage": "https://github.com/rangularjs/rangular",
+  "peerDependencies": {
+    "@angular/common": "^6.0.0-rc.0 || ^6.0.0",
+    "@angular/core": "^6.0.0-rc.0 || ^6.0.0",
+    "lodash": "^4.17.11"
+  }
+}
