@@ -1,0 +1,5 @@
+<div layout="column" layout-align="center center" flex layout-fill>
+  <mat-icon [svgIcon]="image"></mat-icon>
+  <h1>{{message}}</h1>
+  <button mat-raised-button color="accent" (click)="retry.emit()">{{retryButton}}</button>
+</div>

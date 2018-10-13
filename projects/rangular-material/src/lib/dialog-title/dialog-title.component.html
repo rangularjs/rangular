@@ -1,0 +1,14 @@
+<div layout="row" flex layout-align="start center"
+     class="pad-right-md pad-left-sm bgc-blue-800 tc-white-4">
+  <ng-template [ngIf]="isEditMode" [ngIfElse]="titleNew">
+    <h4 *ngIf="displayField">ویرایش {{item[displayField]}}</h4>
+    <h4 *ngIf="!displayField">ویرایش {{type}}</h4>
+  </ng-template>
+  <ng-template #titleNew>
+    <h4>ثبت {{type}} جدید</h4>
+  </ng-template>
+  <span flex></span>
+  <button mat-icon-button (click)="close.emit()">
+    <mat-icon>close</mat-icon>
+  </button>
+</div>

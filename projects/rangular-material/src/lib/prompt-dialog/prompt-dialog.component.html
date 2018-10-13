@@ -1,0 +1,24 @@
+<div layout="column" flex>
+  <div layout="row" flex layout-align="start center"
+       class="pad-right-md pad-left-sm bgc-deep-orange-700 tc-white-4">
+    <h4>لطفا {{data.title}} را وارد نمایید</h4>
+    <span flex></span>
+    <button mat-icon-button (click)="close()">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+  <form [formGroup]="form" (submit)="submit()">
+    <div layout="column" flex class="pad-md">
+      <mat-form-field>
+        <input matInput [type]="data.type" [placeholder]="data.title" required formControlName="value">
+        <mat-error *ngIf="form.get('value').invalid && (form.get('value').touched || submitted)">لطفا {{data.title}} را
+          وارد نمایید
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div layout="row" flex layout-align="end center" layout-padding>
+      <button mat-button color="accent" type="submit">{{data.acceptButton}}</button>
+      <button mat-button (click)="close()" type="button">{{data.cancelButton}}</button>
+    </div>
+  </form>
+</div>

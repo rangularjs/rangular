@@ -23,6 +23,12 @@
       ],
       "rangular-common/*": [
         "dist/rangular-common/*"
+      ],
+      "rangular-material": [
+        "dist/rangular-material"
+      ],
+      "rangular-material/*": [
+        "dist/rangular-material/*"
       ]
     }
   }

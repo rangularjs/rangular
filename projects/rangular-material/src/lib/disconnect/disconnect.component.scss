@@ -1,0 +1,19 @@
+ran-material-disconnect {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  background-color: #F9FBFC !important;
+
+  mat-icon {
+    width: 30vw !important;
+    height: 30vh !important;
+  }
+
+  h1 {
+    font-size: 3em;
+    font-weight: 700;
+    color: #d6d6d6;
+    margin-top: 0.2em;
+    margin-bottom: 0.8em;
+  }
+}

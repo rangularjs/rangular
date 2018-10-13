@@ -1,0 +1,27 @@
+:host {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 24px;
+}
+
+.icon {
+  color: #ababab;
+  font-size: 5rem;
+}
+
+.message {
+  font-size: 1.5em;
+  margin-top: 1rem;
+  line-height: 1.5em;
+  font-weight: 400;
+  margin-bottom: 2rem;
+
+  span {
+    font-size: 0.8em;
+  }
+}
+
+.img {
+  max-width: 20vw;
+}

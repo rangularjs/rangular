@@ -1,0 +1,39 @@
+<div layout="column" layout-align="start stretch" flex>
+  <ng-template [ngIf]="showFilter">
+    <td-search-input (search)="filter($event)"
+                     (searchDebounce)="filter($event)"
+                     [showUnderline]="true"
+                     placeholder="جستجو ..."></td-search-input>
+  </ng-template>
+  <ng-template [ngIf]="multiple" [ngIfElse]="rowSelector">
+    <div class="block overflow-auto" flex>
+      <mat-selection-list #list>
+        <ng-template ngFor let-item [ngForOf]="filteredItems">
+          <mat-list-option [value]="item" [selected]="isSelected(item)">
+            <div layout="row" flex layout-align="start center" class="item">
+              <mat-icon class="item-icon mini-icon">{{icon}}</mat-icon>
+              <h2 flex>{{item[displayField]}}</h2>
+            </div>
+          </mat-list-option>
+          <mat-divider></mat-divider>
+        </ng-template>
+      </mat-selection-list>
+    </div>
+    <button mat-raised-button color="accent" (click)="submit(list.selectedOptions.selected)">انتخاب</button>
+  </ng-template>
+  <ng-template #rowSelector>
+    <mat-nav-list>
+      <ng-template ngFor let-row [ngForOf]="filteredItems">
+        <mat-list-item class="item"
+                       (click)="itemSelected.emit(row)">
+          <div layout="row" flex layout-align="start center">
+            <mat-icon class="item-icon mini-icon">{{icon}}</mat-icon>
+            <h2 flex>{{row[displayField]}}</h2>
+            <mat-icon>chevron_left</mat-icon>
+          </div>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+      </ng-template>
+    </mat-nav-list>
+  </ng-template>
+</div>

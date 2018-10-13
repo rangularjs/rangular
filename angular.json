@@ -46,7 +46,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "./node_modules/@covalent/core/common/platform.scss",
+              "src/scss/styles.scss"
             ],
             "scripts": []
           },
@@ -95,7 +96,8 @@
             "tsConfig": "src/tsconfig.spec.json",
             "karmaConfig": "src/karma.conf.js",
             "styles": [
-              "src/styles.scss"
+              "./node_modules/@covalent/core/common/platform.scss",
+              "src/scss/styles.scss"
             ],
             "scripts": [],
             "assets": [
@@ -177,6 +179,46 @@
             "tsConfig": [
               "projects/rangular-common/tsconfig.lib.json",
               "projects/rangular-common/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "rangular-material": {
+      "root": "projects/rangular-material",
+      "sourceRoot": "projects/rangular-material/src",
+      "projectType": "library",
+      "prefix": "ran",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/rangular-material/tsconfig.lib.json",
+            "project": "projects/rangular-material/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/rangular-material/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/rangular-material/src/test.ts",
+            "tsConfig": "projects/rangular-material/tsconfig.spec.json",
+            "karmaConfig": "projects/rangular-material/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/rangular-material/tsconfig.lib.json",
+              "projects/rangular-material/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"
