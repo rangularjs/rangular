@@ -1,0 +1,81 @@
+<td-layout #layout>
+  <td-layout-nav>
+    <div td-toolbar-content layout="row" layout-align="start center" flex>
+      <h4>Rangular</h4>
+      <span flex></span>
+      <button mat-button routerLink="/disconnect">Disconnect Page</button>
+    </div>
+    <div class="overflow-auto">
+      <div layout="row">
+        <mat-card flex="50">
+          <mat-card-header>
+            <h4>Dialogs</h4>
+          </mat-card-header>
+          <mat-card-content>
+            <div layout="row" layout-align="start center">
+              <button mat-button (click)="openConfirm()">Confirm</button>
+              <button mat-button (click)="openPrompt()">Prompt</button>
+              <button mat-button (click)="openCustom()">Custom</button>
+              <button mat-button (click)="openSelector()">Item Selector</button>
+            </div>
+          </mat-card-content>
+        </mat-card>
+
+        <mat-card flex="50">
+          <mat-card-header>
+            <h4>Avatar</h4>
+          </mat-card-header>
+          <mat-card-content>
+            <div layout="row">
+              <ran-avatar></ran-avatar>
+              <ran-avatar src="/assets/img/pic.jpg"></ran-avatar>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </div>
+
+      <div layout="row">
+        <mat-card flex="50">
+          <mat-card-header>
+            <h4>Item selector multiple</h4>
+          </mat-card-header>
+          <mat-card-content>
+            <div layout="row">
+              <ran-item-selector [items]="items" displayField="title"
+                                 (submitted)="submitted($event)"
+                                 acceptButton="Select"
+                                 icon="chevron_right"
+                                 searchPlaceholder="Search ..."></ran-item-selector>
+            </div>
+          </mat-card-content>
+        </mat-card>
+        <mat-card flex="50">
+          <mat-card-header>
+            <h4>Item selector single</h4>
+          </mat-card-header>
+          <mat-card-content>
+            <div layout="row">
+              <ran-item-selector [items]="items" displayField="title"
+                                 (itemSelected)="itemSelected($event)"
+                                 [multiple]="false"
+                                 acceptButton="Select"
+                                 icon=""
+                                 searchPlaceholder="Search ..."></ran-item-selector>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </div>
+      <div layout="row">
+        <mat-card flex>
+          <mat-card-header>
+            <h4>Empty view</h4>
+          </mat-card-header>
+          <mat-card-content class="size-height-256">
+            <ran-empty-view message="List is empty."
+                            buttonText="New"></ran-empty-view>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  </td-layout-nav>
+</td-layout>
