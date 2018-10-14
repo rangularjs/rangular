@@ -1,6 +1,6 @@
 import {FormArray, FormGroup} from '@angular/forms';
 import {BaseEntity} from './base.entity';
-import {isNull, isUndefiend} from 'lodash';
+import {isNull, isUndefined} from 'lodash';
 
 export function setFormValuesFromObject(form: FormGroup, obj: any) {
   Object.keys(obj).forEach(key => {
@@ -52,5 +52,5 @@ export function parse(str) {
 }
 
 export function isNullOrUndefined(item: any) {
-  return isNull(item) || isUndefiend(item);
+  return isNull(item) || isUndefined(item);
 }
