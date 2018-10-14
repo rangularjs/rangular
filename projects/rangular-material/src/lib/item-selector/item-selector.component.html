@@ -3,7 +3,7 @@
     <td-search-input (search)="filter($event)"
                      (searchDebounce)="filter($event)"
                      [showUnderline]="true"
-                     placeholder="جستجو ..."></td-search-input>
+                     [placeholder]="searchPlaceholder"></td-search-input>
   </ng-template>
   <ng-template [ngIf]="multiple" [ngIfElse]="rowSelector">
     <div class="block overflow-auto" flex>
@@ -19,7 +19,7 @@
         </ng-template>
       </mat-selection-list>
     </div>
-    <button mat-raised-button color="accent" (click)="submit(list.selectedOptions.selected)">انتخاب</button>
+    <button mat-raised-button color="accent" (click)="submit(list.selectedOptions.selected)">{{acceptButton}}</button>
   </ng-template>
   <ng-template #rowSelector>
     <mat-nav-list>

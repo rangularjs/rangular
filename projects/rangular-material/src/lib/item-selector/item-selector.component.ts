@@ -13,11 +13,13 @@ import {isFunction} from 'lodash';
 export class ItemSelectorComponent {
 
   @Input() selectedItems: any[];
-  @Input() selectedFn: (obj, item) => boolean;
-  @Input() multiple: boolean;
+  @Input() multiple = true;
+  @Input() icon = 'chevron_left';
+  @Input() acceptButton = 'انتخاب';
+  @Input() searchPlaceholder = 'جستجو ...';
+  @Input() showFilter = true;
   @Input() displayField: string;
-  @Input() icon: string;
-  @Input() showFilter: boolean;
+  @Input() selectedFn: (obj, item) => boolean;
   @Output() itemSelected = new EventEmitter<any>();
   @Output() submitted = new EventEmitter<any[]>();
   filteredItems: any[];
@@ -31,7 +33,7 @@ export class ItemSelectorComponent {
   @Input()
   set items(values: any[]) {
     this._items = values;
-    if (isNullOrUndefined(values)) {
+    if (!isNullOrUndefined(values)) {
       this.filter(null);
     }
   }

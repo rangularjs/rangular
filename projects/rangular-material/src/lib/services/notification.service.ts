@@ -1,7 +1,7 @@
-import {Injectable, Optional, Provider, SkipSelf} from '@angular/core';
+import {Injectable} from '@angular/core';
 import {MatSnackBar} from '@angular/material';
 
-@Injectable()
+@Injectable({providedIn: 'root'})
 export class NotificationService {
   constructor(private snackbar: MatSnackBar) {
   }
@@ -36,14 +36,3 @@ export class NotificationService {
     });
   }
 }
-
-
-export function NOTIFICATION_PROVIDER_FACTORY(parent: NotificationService, snackBar: MatSnackBar): NotificationService {
-  return parent || new NotificationService(snackBar);
-}
-
-export const NOTIFICATION_PROVIDER: Provider = {
-  provide: NotificationService,
-  deps: [[new Optional(), new SkipSelf(), NotificationService], MatSnackBar],
-  useFactory: NOTIFICATION_PROVIDER_FACTORY
-};

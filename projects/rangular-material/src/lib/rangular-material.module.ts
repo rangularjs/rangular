@@ -19,8 +19,6 @@ import {CovalentCommonModule} from '@covalent/core/common';
 import {CovalentLayoutModule} from '@covalent/core/layout';
 import {CovalentMediaModule} from '@covalent/core/media';
 import {CovalentSearchModule} from '@covalent/core/search';
-import {NOTIFICATION_PROVIDER} from './services/notification.service';
-import {DIALOG_PROVIDER} from './services/dialog.service';
 import {DialogTitleComponent} from './dialog-title/dialog-title.component';
 import {EmptyViewComponent} from './empty-view/empty-view.component';
 import {ItemSelectorComponent} from './item-selector/item-selector.component';
@@ -56,10 +54,6 @@ const COMPONENTS = [
     CovalentLayoutModule,
     CovalentCommonModule,
     RangularCommonModule,
-  ],
-  providers: [
-    DIALOG_PROVIDER,
-    NOTIFICATION_PROVIDER,
   ],
   declarations: [...COMPONENTS],
   exports: [...COMPONENTS],

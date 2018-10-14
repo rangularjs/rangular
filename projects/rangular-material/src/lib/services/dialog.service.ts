@@ -1,10 +1,22 @@
-import {Injectable, Optional, Provider, SkipSelf} from '@angular/core';
+import {Injectable} from '@angular/core';
 import {MatDialog, MatDialogConfig, MatDialogRef} from '@angular/material';
 import {ComponentType} from '@angular/cdk/portal';
 import {PromptDialogComponent} from '../prompt-dialog/prompt-dialog.component';
 import {ConfirmDialogComponent} from '../confirm-dialog/confirm-dialog.component';
+import {ItemSelectorDialogComponent} from '../item-selector-dialog/item-selector-dialog.component';
 
-@Injectable()
+export interface ItemSelectorConfig {
+  displayField: string;
+  multiple?: boolean;
+  searchPlaceHolder?: string;
+  acceptButton?: string;
+  icon?: string;
+  selectedFn?: (obj, item) => boolean;
+  selectedItems?: any[];
+  onInit?: any;
+}
+
+@Injectable({providedIn: 'root'})
 export class DialogService {
 
   constructor(private dialog: MatDialog) {
@@ -59,6 +71,22 @@ export class DialogService {
     });
   }
 
+  openItemSelector<T>(items: T[], config: ItemSelectorConfig) {
+    return this.open(ItemSelectorDialogComponent, this._createConfig({
+      disableClose: false,
+      width: '100%',
+      height: 'calc(100% - 64px)',
+      maxWidth: '100%',
+      panelClass: 'item-selector-panel',
+      data: {
+        items,
+        icon: 'chevron_left',
+        multiple: false,
+        ...config,
+      }
+    }));
+  }
+
   private _createConfig(config: any): MatDialogConfig {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.direction = 'rtl';
@@ -70,13 +98,3 @@ export class DialogService {
   }
 
 }
-
-export function DIALOG_PROVIDER_FACTORY(parent: DialogService, dialog: MatDialog): DialogService {
-  return parent || new DialogService(dialog);
-}
-
-export const DIALOG_PROVIDER: Provider = {
-  provide: DialogService,
-  deps: [[new Optional(), new SkipSelf(), DialogService], MatDialog],
-  useFactory: DIALOG_PROVIDER_FACTORY
-};

@@ -1,12 +1,12 @@
 import {Component, Inject, OnInit} from '@angular/core';
-import {TdMediaService} from '@covalent/core';
+import {TdMediaService} from '@covalent/core/media';
 import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material';
 import {get, isFunction} from 'lodash';
 
 @Component({
   selector: 'ran-item-selector-dialog',
   templateUrl: './item-selector-dialog.component.html',
-  styleUrls: ['./item-selector-dialog.component.scss']
+  styleUrls: ['./item-selector-dialog.component.scss'],
 })
 export class ItemSelectorDialogComponent implements OnInit {
 
