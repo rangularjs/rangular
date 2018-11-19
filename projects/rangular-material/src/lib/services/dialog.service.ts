@@ -30,7 +30,7 @@ export class DialogService {
    * Opens a modal dialog containing the given component.
    */
   open<T>(component: ComponentType<T>,
-          config: MatDialogConfig): MatDialogRef<T> {
+          config?: MatDialogConfig): MatDialogRef<T> {
     return this.dialog.open(component, this._createConfig(config));
   }
 
@@ -87,7 +87,7 @@ export class DialogService {
     }));
   }
 
-  private _createConfig(config: any): MatDialogConfig {
+  private _createConfig(config: any = {}): MatDialogConfig {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.direction = 'rtl';
     dialogConfig.disableClose = false;
