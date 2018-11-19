@@ -11,6 +11,8 @@ export class DialogTitleComponent {
   @Input() type = 'آیتم';
   @Input() displayField: string;
   @Input() isEditMode: boolean;
+  @Input() backgroundClass = 'bgc-blue-800';
+  @Input() colorClass = 'tc-white-4';
 
   @Output() close = new EventEmitter<void>();
 }

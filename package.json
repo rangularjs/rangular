@@ -45,11 +45,11 @@
     "@angular/platform-browser-dynamic": "^7.0.3",
     "@angular/router": "^7.0.3",
     "@covalent/core": "^2.0.0-beta.4",
-    "rangular-common": "file:dist/rangular-common/rangular-common-0.0.2.tgz",
-    "rangular-material": "file:dist/rangular-material/rangular-material-0.0.2.tgz",
     "core-js": "^2.5.4",
     "hammerjs": "^2.0.8",
     "lodash": "^4.17.11",
+    "rangular-common": "file:dist/rangular-common/rangular-common-0.0.2.tgz",
+    "rangular-material": "file:dist/rangular-material/rangular-material-0.0.3.tgz",
     "rxjs": "^6.0.0",
     "zone.js": "~0.8.26"
   },
