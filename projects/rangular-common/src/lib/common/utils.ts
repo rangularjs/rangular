@@ -5,7 +5,7 @@ import {isNull, isUndefined} from 'lodash';
 export function setFormValuesFromObject(form: FormGroup, obj: any) {
   Object.keys(obj).forEach(key => {
     const item = form.get(key);
-    if (item && !(item instanceof FormArray)) {
+    if (item && !(item instanceof FormArray) && !(item instanceof FormGroup)) {
       item.setValue(obj[key]);
     }
   });
