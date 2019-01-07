@@ -6,7 +6,7 @@ import {ConfirmDialogComponent} from '../confirm-dialog/confirm-dialog.component
 import {ItemSelectorDialogComponent} from '../item-selector-dialog/item-selector-dialog.component';
 
 export interface ItemSelectorConfig {
-  displayField: string;
+  displayField: any;
   multiple?: boolean;
   searchPlaceHolder?: string;
   acceptButton?: string;
@@ -93,6 +93,7 @@ export class DialogService {
     dialogConfig.disableClose = false;
     dialogConfig.width = '500px';
     dialogConfig.hasBackdrop = true;
+    dialogConfig.autoFocus = false;
     Object.assign(dialogConfig, config);
     return dialogConfig;
   }
