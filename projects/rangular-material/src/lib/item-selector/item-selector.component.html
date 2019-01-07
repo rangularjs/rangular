@@ -12,7 +12,7 @@
           <mat-list-option [value]="item" [selected]="isSelected(item)">
             <div layout="row" flex layout-align="start center" class="item">
               <mat-icon class="item-icon mini-icon">{{icon}}</mat-icon>
-              <h2 flex>{{item[displayField]}}</h2>
+              <h2 flex>{{getDisplayField(item)}}</h2>
             </div>
           </mat-list-option>
           <mat-divider></mat-divider>
@@ -28,7 +28,7 @@
                        (click)="itemSelected.emit(row)">
           <div layout="row" flex layout-align="start center">
             <mat-icon class="item-icon mini-icon">{{icon}}</mat-icon>
-            <h2 flex>{{row[displayField]}}</h2>
+            <h2 flex>{{getDisplayField(row)}}</h2>
             <mat-icon>chevron_left</mat-icon>
           </div>
         </mat-list-item>

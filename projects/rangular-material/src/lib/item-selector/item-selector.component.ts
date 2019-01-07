@@ -1,7 +1,7 @@
 import {ChangeDetectionStrategy, Component, EventEmitter, Input, Output, ViewEncapsulation} from '@angular/core';
 import {MatListOption} from '@angular/material';
 import {isNullOrUndefined} from 'rangular-common';
-import {isFunction} from 'lodash';
+import {get, isFunction, isString} from 'lodash';
 
 @Component({
   selector: 'ran-item-selector',
@@ -18,7 +18,7 @@ export class ItemSelectorComponent {
   @Input() acceptButton = 'انتخاب';
   @Input() searchPlaceholder = 'جستجو ...';
   @Input() showFilter = true;
-  @Input() displayField: string;
+  @Input() displayField: any;
   @Input() selectedFn: (obj, item) => boolean;
   @Output() itemSelected = new EventEmitter<any>();
   @Output() submitted = new EventEmitter<any[]>();
@@ -65,6 +65,15 @@ export class ItemSelectorComponent {
       });
     } else {
       this.filteredItems = [...this.items];
+    }
+  }
+
+  getDisplayField(item: any) {
+    if (isString(this.displayField)) {
+      return get(item, this.displayField);
+    }
+    if (isFunction(this.displayField)) {
+      return this.displayField(item);
     }
   }
 
