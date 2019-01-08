@@ -4,6 +4,7 @@
 
 export * from './lib/rangular-common.module';
 export * from './lib/common/base.entity';
+export * from './lib/common/enum.model';
 export * from './lib/common/abstract-form.component';
 export * from './lib/common/crud.service';
 export * from './lib/common/utils';
