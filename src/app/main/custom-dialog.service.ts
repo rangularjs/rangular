@@ -1,7 +1,7 @@
 import {Injectable, NgZone} from '@angular/core';
 import {MatDialog, MatDialogConfig, MatDialogRef} from '@angular/material';
 import {ComponentType} from '@angular/cdk/portal';
-import {ConfirmDialogComponent, DialogService, PromptDialogComponent} from 'rangular-material';
+import {ConfirmDialogComponent, DialogService, PromptDialogComponent, MessageDialogComponent} from 'rangular-material';
 
 @Injectable()
 export class CustomDialogService extends DialogService {
@@ -27,6 +27,13 @@ export class CustomDialogService extends DialogService {
     return result;
   }
 
+  message(title: string, message: string): MatDialogRef<MessageDialogComponent, any> {
+    let result;
+    this.zone.run(() => {
+      result = super.message(title, message);
+    });
+    return result;
+  }
 
   open<T>(component: ComponentType<T>, config: MatDialogConfig): MatDialogRef<T> {
     let result;

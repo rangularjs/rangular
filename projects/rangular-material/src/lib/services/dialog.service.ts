@@ -4,6 +4,7 @@ import {ComponentType} from '@angular/cdk/portal';
 import {PromptDialogComponent} from '../prompt-dialog/prompt-dialog.component';
 import {ConfirmDialogComponent} from '../confirm-dialog/confirm-dialog.component';
 import {ItemSelectorDialogComponent} from '../item-selector-dialog/item-selector-dialog.component';
+import {MessageDialogComponent} from '../message-dialog/message-dialog.component';
 
 export interface ItemSelectorConfig {
   displayField: any;
@@ -67,6 +68,23 @@ export class DialogService {
         title,
         type,
         value,
+      },
+    });
+  }
+
+  /**
+   * Opens a message dialog with the provided config.
+   * @param title
+   * @param message
+   */
+  message(title: string, message: string) {
+    return this.dialog.open(MessageDialogComponent, {
+      direction: 'rtl',
+      minWidth: '400px',
+      data: {
+        acceptButton: 'تایید',
+        title,
+        message,
       },
     });
   }

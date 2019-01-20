@@ -1,0 +1,14 @@
+<div layout="column" flex>
+  <div layout="row" flex layout-align="start center"
+       class="pad-right-md pad-left-md bgc-deep-orange-700 tc-white-4">
+    <h4>{{data.title}}</h4>
+    <span flex></span>
+    <mat-icon>info_outline</mat-icon>
+  </div>
+  <div layout="column" flex layout-align="start center" class="pad-md">
+    <h4>{{data.message}}</h4>
+  </div>
+  <div layout="row" flex layout-align="end center" layout-padding>
+    <button mat-button color="accent" (click)="submit()">{{data.acceptButton}}</button>
+  </div>
+</div>

@@ -57,6 +57,10 @@ export class HomePageComponent {
       });
   }
 
+  openMessage() {
+    this.dialogService.message('پیام', 'این یک پیام است');
+  }
+
   submitted(items: any[]) {
     console.log(items);
   }

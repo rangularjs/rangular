@@ -24,6 +24,7 @@ import {EmptyViewComponent} from './empty-view/empty-view.component';
 import {ItemSelectorComponent} from './item-selector/item-selector.component';
 import {ItemSelectorDialogComponent} from './item-selector-dialog/item-selector-dialog.component';
 import {RangularCommonModule} from 'rangular-common';
+import {MessageDialogComponent} from './message-dialog/message-dialog.component';
 
 const COMPONENTS = [
   AvatarComponent,
@@ -34,6 +35,7 @@ const COMPONENTS = [
   ItemSelectorComponent,
   ItemSelectorDialogComponent,
   PromptDialogComponent,
+  MessageDialogComponent,
 ];
 
 @NgModule({
@@ -61,6 +63,7 @@ const COMPONENTS = [
     ConfirmDialogComponent,
     PromptDialogComponent,
     ItemSelectorDialogComponent,
+    MessageDialogComponent,
   ],
 })
 export class RangularMaterialModule {
