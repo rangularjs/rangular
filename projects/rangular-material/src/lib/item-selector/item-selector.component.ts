@@ -1,7 +1,8 @@
-import {ChangeDetectionStrategy, Component, EventEmitter, Input, Output, ViewEncapsulation} from '@angular/core';
+import {ChangeDetectionStrategy, ChangeDetectorRef, Component, EventEmitter, Input, Output, ViewEncapsulation} from '@angular/core';
 import {MatListOption} from '@angular/material';
 import {isNullOrUndefined} from 'rangular-common';
-import {get, isFunction, isString} from 'lodash';
+import {get, isArray, isFunction, isString} from 'lodash';
+import {isObservable} from 'rxjs';
 
 @Component({
   selector: 'ran-item-selector',
@@ -26,16 +27,23 @@ export class ItemSelectorComponent {
 
   _items: any[];
 
-  get items(): any[] {
+  get items(): any {
     return this._items;
   }
 
   @Input()
-  set items(values: any[]) {
-    this._items = values;
-    if (!isNullOrUndefined(values)) {
-      this.filter(null);
+  set items(values: any) {
+    if (isArray(values)) {
+      this.setData(values);
+    } else if (isObservable(values)) {
+      values.subscribe((data: any[]) => {
+        this.setData(data);
+        this._changeDetector.markForCheck();
+      });
     }
+  }
+
+  constructor(private _changeDetector: ChangeDetectorRef) {
   }
 
   submit(options: MatListOption[]) {
@@ -77,4 +85,10 @@ export class ItemSelectorComponent {
     }
   }
 
+  private setData(values: any[]) {
+    this._items = values;
+    if (!isNullOrUndefined(values)) {
+      this.filter(null);
+    }
+  }
 }

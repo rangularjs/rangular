@@ -5,6 +5,7 @@ import {PromptDialogComponent} from '../prompt-dialog/prompt-dialog.component';
 import {ConfirmDialogComponent} from '../confirm-dialog/confirm-dialog.component';
 import {ItemSelectorDialogComponent} from '../item-selector-dialog/item-selector-dialog.component';
 import {MessageDialogComponent} from '../message-dialog/message-dialog.component';
+import {Observable} from 'rxjs';
 
 export interface ItemSelectorConfig {
   displayField: any;
@@ -89,7 +90,7 @@ export class DialogService {
     });
   }
 
-  openItemSelector<T>(items: T[], config: ItemSelectorConfig) {
+  openItemSelector<T>(items: T[] | Observable<T[]>, config: ItemSelectorConfig) {
     return this.open(ItemSelectorDialogComponent, this._createConfig({
       disableClose: false,
       width: '100%',

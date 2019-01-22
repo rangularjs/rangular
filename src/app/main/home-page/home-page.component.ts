@@ -5,6 +5,7 @@ import {CustomDialogComponent} from '../custom-dialog/custom-dialog.component';
 import {MatDialog, MatIconRegistry} from '@angular/material';
 import {DomSanitizer} from '@angular/platform-browser';
 import {TdDialogService} from '@covalent/core/dialogs';
+import {Subject} from 'rxjs';
 
 @Component({
   selector: 'app-home-page',
@@ -18,6 +19,8 @@ export class HomePageComponent {
     {title: 'Item 2', value: '2'},
     {title: 'Item 3', value: '3'},
   ];
+
+  items$: Subject<Item[]> = new Subject();
 
   constructor(private dialogService: DialogService,
               private d: TdDialogService,
@@ -43,11 +46,19 @@ export class HomePageComponent {
   }
 
   openSelector() {
-    this.dialogService.openItemSelector<Item>(this.items, {displayField: 'title'})
+    // this.dialogService.openItemSelector<Item>(this.items, {displayField: 'title'})
+    //     //   .afterClosed()
+    //     //   .subscribe(result => {
+    //     //     console.log(result);
+    //     //   });
+    this.dialogService.openItemSelector<Item>(this.items$, {displayField: 'title'})
       .afterClosed()
       .subscribe(result => {
         console.log(result);
       });
+    setTimeout(() => {
+      this.items$.next(this.items);
+    }, 1000);
   }
 
   openCustom() {
