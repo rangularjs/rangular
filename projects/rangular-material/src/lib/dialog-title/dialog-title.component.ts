@@ -13,6 +13,7 @@ export class DialogTitleComponent {
   @Input() isEditMode: boolean;
   @Input() backgroundClass = 'bgc-blue-800';
   @Input() colorClass = 'tc-white-4';
+  @Input() customTitle: string;
 
   @Output() close = new EventEmitter<void>();
 }
