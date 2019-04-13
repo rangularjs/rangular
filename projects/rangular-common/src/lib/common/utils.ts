@@ -1,6 +1,6 @@
 import {FormArray, FormGroup} from '@angular/forms';
 import {BaseEntity} from './base.entity';
-import {isNull, isUndefined, get} from 'lodash';
+import {get, isNull, isUndefined, trim} from 'lodash';
 import {EnumModel} from './enum.model';
 
 export function setFormValuesFromObject(form: FormGroup, obj: any) {
@@ -54,6 +54,10 @@ export function parse(str) {
 
 export function isNullOrUndefined(item: any) {
   return isNull(item) || isUndefined(item);
+}
+
+export function isNullOrUndefinedOrEmpty(item: string): boolean {
+  return isNullOrUndefined(item) || trim(item) === '';
 }
 
 export function getEnumModelValue(value: string, items: EnumModel[]) {
