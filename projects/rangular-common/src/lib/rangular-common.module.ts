@@ -3,11 +3,19 @@ import {RequireAuthorityDirective} from './directives/require-authority.directiv
 import {CommonModule} from '@angular/common';
 import {OnlyNumberDirective} from './directives/only-number.directive';
 import {EnglishNumberDirective} from './directives/english-number.directive';
+import {InfoService} from './common/info.service';
+
+const COMPONENTS = [
+  RequireAuthorityDirective,
+  OnlyNumberDirective,
+  EnglishNumberDirective,
+];
 
 @NgModule({
   imports: [CommonModule],
-  declarations: [RequireAuthorityDirective, OnlyNumberDirective, EnglishNumberDirective],
-  exports: [RequireAuthorityDirective, OnlyNumberDirective, EnglishNumberDirective]
+  declarations: [...COMPONENTS],
+  exports: [...COMPONENTS],
+  providers: [InfoService]
 })
 export class RangularCommonModule {
 }
