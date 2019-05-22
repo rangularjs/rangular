@@ -67,3 +67,28 @@ export function getEnumModelValue(value: string, items: EnumModel[]) {
   const item = items.find(v => v.value === value);
   return get(item, 'title');
 }
+
+export function compareBaseEntity(e1: BaseEntity, e2: BaseEntity) {
+  return get(e1, 'id') === get(e2, 'id');
+}
+
+export function convertNumbersToEnglish(value: string): string {
+  value = value.replace(/۰/g, '0');
+  value = value.replace(/۱/g, '1');
+  value = value.replace(/۲/g, '2');
+  value = value.replace(/۳/g, '3');
+  value = value.replace(/۴/g, '4');
+  value = value.replace(/۵/g, '5');
+  value = value.replace(/۶/g, '6');
+  value = value.replace(/۷/g, '7');
+  value = value.replace(/۸/g, '8');
+  value = value.replace(/۹/g, '9');
+  return value;
+}
+
+
+export function replaceArabicAlpha(value: string): string {
+  return value
+    .replace(/ي/g, 'ی')
+    .replace(/ك/g, 'ک');
+}
