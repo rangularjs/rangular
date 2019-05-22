@@ -1,16 +1,12 @@
-import {Directive, ElementRef, HostListener, Input} from '@angular/core';
-import {get} from 'lodash';
-import {convertNumbersToEnglish} from '../common/utils';
+import {Directive, HostListener, Input} from '@angular/core';
 
 @Directive({
   selector: '[ranOnlyNumber]'
 })
 export class OnlyNumberDirective {
-  constructor(private el: ElementRef) {
-  }
 
   // tslint:disable
-  @Input('pbOnlyNumber') OnlyNumber: boolean;
+  @Input('ranOnlyNumber') OnlyNumber: boolean;
 
   @HostListener('keydown', ['$event']) onKeyDown(event) {
     let e = <KeyboardEvent>event;
@@ -33,17 +29,6 @@ export class OnlyNumberDirective {
       if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
         e.preventDefault();
       }
-    }
-  }
-
-  @HostListener('keyup') onKeyUp() {
-    const value = get(this.el.nativeElement, 'value');
-    if (value) {
-      this.el.nativeElement.value = convertNumbersToEnglish(value);
-      let event: Event = document.createEvent('Event');
-      event.initEvent('input', true, true);
-      Object.defineProperty(event, 'target', {value: this.el.nativeElement, enumerable: true});
-      this.el.nativeElement['dispatchEvent'](event);
     }
   }
 

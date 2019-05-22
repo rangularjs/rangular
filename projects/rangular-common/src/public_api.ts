@@ -13,3 +13,4 @@ export * from './lib/common/request-failed.action';
 export * from './lib/common/crud-state.model';
 export * from './lib/directives/require-authority.directive';
 export * from './lib/directives/only-number.directive';
+export * from './lib/directives/english-number.directive';
