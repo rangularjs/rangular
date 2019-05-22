@@ -40,6 +40,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {RangularCommonModule} from 'rangular-common';
 import {RangularMaterialModule} from 'rangular-material';
+import {RangularCrudModule} from 'rangular-crud';
 
 const ANGULAR_MODULES: any[] = [
   CommonModule,
@@ -93,6 +94,7 @@ const COVALENT_MODULES: any[] = [
 const RANGULAR_MODULES: any[] = [
   RangularCommonModule,
   RangularMaterialModule,
+  RangularCrudModule,
 ];
 
 @NgModule({

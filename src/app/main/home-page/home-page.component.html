@@ -4,6 +4,7 @@
       <h4>Rangular</h4>
       <span flex></span>
       <button mat-button routerLink="/disconnect">Disconnect Page</button>
+      <button mat-button routerLink="/contacts">Contacts Page</button>
     </div>
     <div class="overflow-auto">
       <div layout="row">
@@ -76,6 +77,13 @@
                             buttonText="New"></ran-empty-view>
           </mat-card-content>
         </mat-card>
+      </div>
+
+      <div layout="row" style="height: 500px;">
+        <ran-crud-table [items]="contacts"
+                        type="Contact"
+                        [columns]="columns"
+                        flex></ran-crud-table>
       </div>
     </div>
   </td-layout-nav>

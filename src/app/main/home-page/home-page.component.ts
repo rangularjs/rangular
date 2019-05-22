@@ -6,6 +6,7 @@ import {MatDialog, MatIconRegistry} from '@angular/material';
 import {DomSanitizer} from '@angular/platform-browser';
 import {TdDialogService} from '@covalent/core/dialogs';
 import {Subject} from 'rxjs';
+import {ColumnModel} from 'rangular-crud';
 
 @Component({
   selector: 'app-home-page',
@@ -21,6 +22,18 @@ export class HomePageComponent {
   ];
 
   items$: Subject<Item[]> = new Subject();
+
+  contacts: any[] = [
+    {id: 1, name: 'John'},
+    {id: 2, name: 'Micky'},
+    {id: 3, name: 'Marry'},
+    {id: 4, name: 'Leo'},
+    {id: 5, name: 'Lily'},
+  ];
+
+  columns: ColumnModel[] = [
+    {headerName: 'Name', field: 'name', checkboxSelection: true}
+  ];
 
   constructor(private dialogService: DialogService,
               private d: TdDialogService,

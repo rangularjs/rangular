@@ -11,7 +11,7 @@ import {CustomDialogService} from './custom-dialog.service';
 @NgModule({
   imports: [
     SharedModule,
-    MainRoutingModule
+    MainRoutingModule,
   ],
   declarations: [HomePageComponent, CustomDialogComponent, DisconnectPageComponent],
   entryComponents: [CustomDialogComponent],

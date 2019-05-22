@@ -1,0 +1,10 @@
+:host {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  height: 100%;
+}
+
+.relative {
+  position: relative !important;
+}

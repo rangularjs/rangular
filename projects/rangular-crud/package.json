@@ -1,0 +1,27 @@
+{
+  "name": "rangular-crud",
+  "description": "A crud table base on ag grid",
+  "version": "0.0.1",
+  "keywords": [
+    "angular",
+    "ag-grid"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rangularjs/rangular"
+  },
+  "homepage": "https://github.com/rangularjs/rangular",
+  "peerDependencies": {
+    "@angular/common": "^7.0.0",
+    "@angular/core": "^7.0.0",
+    "lodash": "^4.0.0",
+    "@angular/animations": "^7.0.0",
+    "@angular/cdk": "^7.0.0",
+    "@angular/material": "^7.0.0",
+    "@covalent/core": "^2.0.1",
+    "rangular-common": "^0.0.0",
+    "ag-grid-angular": "^20.2.0",
+    "ag-grid-community": "^20.2.0"
+  }
+}

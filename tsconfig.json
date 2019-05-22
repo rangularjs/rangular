@@ -29,6 +29,12 @@
       ],
       "rangular-material/*": [
         "dist/rangular-material/*"
+      ],
+      "rangular-crud": [
+        "dist/rangular-crud"
+      ],
+      "rangular-crud/*": [
+        "dist/rangular-crud/*"
       ]
     }
   }

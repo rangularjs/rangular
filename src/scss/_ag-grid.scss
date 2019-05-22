@@ -1,0 +1,17 @@
+@import "~ag-grid-community/dist/styles/ag-grid.css";
+@import "~ag-grid-community/dist/styles/ag-theme-material.css";
+
+.ag-theme-material .ag-filter-select,
+.ag-theme-material .ag-header,
+.ag-theme-material {
+  font-family: 'IRANSansFa', sans-serif;
+}
+
+.ag-header {
+  background-color: #f4f4f4 !important;
+}
+
+.ag-row-selected {
+  background-color: #f97b00 !important;
+  color: white !important;
+}

@@ -226,6 +226,46 @@
           }
         }
       }
+    },
+    "rangular-crud": {
+      "root": "projects/rangular-crud",
+      "sourceRoot": "projects/rangular-crud/src",
+      "projectType": "library",
+      "prefix": "ran",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/rangular-crud/tsconfig.lib.json",
+            "project": "projects/rangular-crud/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/rangular-crud/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/rangular-crud/src/test.ts",
+            "tsConfig": "projects/rangular-crud/tsconfig.spec.json",
+            "karmaConfig": "projects/rangular-crud/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/rangular-crud/tsconfig.lib.json",
+              "projects/rangular-crud/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "rangular-app"

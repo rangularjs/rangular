@@ -1,0 +1,34 @@
+<mat-card class="d-flex">
+  <mat-card-content class="d-flex pad-none">
+    <div layout="column" flex>
+      <div layout="row" layout-align="start center"
+           class="pad-left-sm pad-right-md size-height-64 tc-grey-700">
+        <h4>{{type}}</h4>
+        <span flex></span>
+        <button mat-icon-button (click)="onDeleteClicked()" type="button"
+                [disabled]="selectedRows?.length===0">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </div>
+      <mat-divider class="relative"></mat-divider>
+      <ag-grid-angular
+        class="ag-theme-material size-100-percent"
+        [enableRtl]="true"
+        [rowData]="items"
+        [columnDefs]="columns"
+        (rowDoubleClicked)="edit.emit($event.data)"
+        [animateRows]="true"
+        [localeTextFunc]="localeTextFunc"
+        (gridReady)="onGridReady($event)"
+        [pagination]="true"
+        [paginationPageSize]="25"
+        (selectionChanged)="onSelectionChanged()"
+        [getRowNodeId]="getRowNodeId"
+        rowSelection="multiple">
+      </ag-grid-angular>
+      <button mat-fab class="mat-fab-bottom-right" (click)="add.emit()" type="button">
+        <mat-icon>add</mat-icon>
+      </button>
+    </div>
+  </mat-card-content>
+</mat-card>
