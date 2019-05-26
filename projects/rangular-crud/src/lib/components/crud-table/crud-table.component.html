@@ -5,10 +5,12 @@
            class="pad-left-sm pad-right-md size-height-64 tc-grey-700">
         <h4>{{type}}</h4>
         <span flex></span>
-        <button mat-icon-button (click)="onDeleteClicked()" type="button"
-                [disabled]="selectedRows?.length===0">
-          <mat-icon>delete</mat-icon>
-        </button>
+        <ng-template [ngIf]="removeEnabled">
+          <button mat-icon-button (click)="onDeleteClicked()" type="button"
+                  [disabled]="selectedRows?.length===0">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </ng-template>
       </div>
       <mat-divider class="relative"></mat-divider>
       <ag-grid-angular
@@ -16,19 +18,25 @@
         [enableRtl]="true"
         [rowData]="items"
         [columnDefs]="columns"
-        (rowDoubleClicked)="edit.emit($event.data)"
+        (rowDoubleClicked)="onEdit($event.data)"
         [animateRows]="true"
         [localeTextFunc]="localeTextFunc"
         (gridReady)="onGridReady($event)"
-        [pagination]="true"
+        [pagination]="pagination"
         [paginationPageSize]="25"
+        [rowHeight]="rowHeight"
+        [headerHeight]="headerHeight"
+        [navigateToNextCell]="navigateToNextCell"
         (selectionChanged)="onSelectionChanged()"
         [getRowNodeId]="getRowNodeId"
-        rowSelection="multiple">
+        (cellKeyPress)="cellKeyPress.emit($event)"
+        [rowSelection]="rowSelection">
       </ag-grid-angular>
-      <button mat-fab class="mat-fab-bottom-right" (click)="add.emit()" type="button">
-        <mat-icon>add</mat-icon>
-      </button>
+      <ng-template [ngIf]="addEnabled">
+        <button mat-fab class="mat-fab-bottom-right" (click)="add.emit()" type="button">
+          <mat-icon>add</mat-icon>
+        </button>
+      </ng-template>
     </div>
   </mat-card-content>
 </mat-card>
