@@ -77,7 +77,21 @@ export const LOCALE_TEXT = {
   // standard menu
   copy: 'کپی',
   copyWithHeaders: 'کپی با هدر',
-  ctrlC: 'ctrl n C',
-  paste: 'laPaste',
-  ctrlV: 'ctrl n C',
+
+  notEquals: 'نامساوی',
+
+  // filter conditions
+  andCondition: 'و',
+  orCondition: 'یا',
+
+  // tool panel
+  columns: 'ستون ها',
+  filters: 'فیلترها',
+  groups: 'گروه ها',
+  sum: 'مجموع',
+  min: 'حداقل',
+  max: 'حداکثر',
+  count: 'تعداد',
+  average: 'میانگین',
+  totalRows: 'تعداد',
 };

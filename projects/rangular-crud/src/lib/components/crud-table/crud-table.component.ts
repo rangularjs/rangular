@@ -33,7 +33,7 @@ export class CrudTableComponent implements OnInit {
   selectedRows: any[] = [];
 
   ngOnInit() {
-    this.navigateToNextCell = this.navigateToNextCell.bind(this);
+    this.defaultNavigateToNextCell = this.defaultNavigateToNextCell.bind(this);
   }
 
   onGridReady(e: any) {
