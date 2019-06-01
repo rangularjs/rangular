@@ -1,4 +1,6 @@
 import {Directive, Input, TemplateRef, ViewContainerRef} from '@angular/core';
+import {includes, some} from 'lodash';
+import {isNullOrUndefined} from '../common/utils';
 
 @Directive({
   selector: '[ranRequireAuthority]'
@@ -6,7 +8,7 @@ import {Directive, Input, TemplateRef, ViewContainerRef} from '@angular/core';
 export class RequireAuthorityDirective {
 
   // tslint:disable-next-line:no-input-rename
-  @Input('ranRequireAuthority') authority: string;
+  @Input('ranRequireAuthority') authority: string | string[];
 
   constructor(private templateRef: TemplateRef<any>,
               private viewContainer: ViewContainerRef) {
@@ -14,7 +16,11 @@ export class RequireAuthorityDirective {
 
   @Input('authorities')
   set authorities(items: string[]) {
-    if (items && items.find(a => a === this.authority)) {
+    let hasPermission = false;
+    if (!isNullOrUndefined(items)) {
+      hasPermission = some(items, item => includes(this.authority, item));
+    }
+    if (hasPermission) {
       this.viewContainer.createEmbeddedView(this.templateRef);
     } else {
       this.viewContainer.clear();
