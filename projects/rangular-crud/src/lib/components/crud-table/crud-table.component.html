@@ -7,7 +7,7 @@
         <span flex></span>
         <ng-template [ngIf]="removeEnabled">
           <button mat-icon-button (click)="onDeleteClicked()" type="button"
-                  [disabled]="selectedRows?.length===0" class="delete-button">
+                  [disabled]="selectedRows?.length===0">
             <mat-icon>delete</mat-icon>
           </button>
         </ng-template>
@@ -33,7 +33,7 @@
         [rowSelection]="rowSelection">
       </ag-grid-angular>
       <ng-template [ngIf]="addEnabled">
-        <button mat-fab class="add-button mat-fab-bottom-right" (click)="add.emit()" type="button">
+        <button mat-fab class="mat-fab-bottom-right" (click)="add.emit()" type="button">
           <mat-icon>add</mat-icon>
         </button>
       </ng-template>

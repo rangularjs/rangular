@@ -47,26 +47,48 @@ describe('CrudTableComponent', () => {
     component.removeEnabled = false;
     fixture.detectChanges();
 
-    expect(fixture.debugElement.queryAll(By.css('.delete-button')).length).toEqual(0);
+    expect(fixture.debugElement.queryAll(By.css('button')).length).toEqual(1);
+  });
+
+  it('should be disabled when nothing selected', () => {
+    component.selectedRows = [];
+    fixture.detectChanges();
+
+    expect(fixture.debugElement.queryAll(By.css('button'))[0].nativeElement.disabled).toBeTruthy();
+  });
+
+  it('should be enabled when any row selected', () => {
+    component.selectedRows = [{}];
+    fixture.detectChanges();
+
+    expect(fixture.debugElement.queryAll(By.css('button'))[0].nativeElement.disabled).toBeFalsy();
+  });
+
+  it('should render type value in the h4', () => {
+    component.type = 'type';
+    fixture.detectChanges();
+
+    expect(fixture.debugElement.queryAll(By.css('h4'))[0].nativeElement.textContent).toContain(component.type);
   });
 
   it('should haven\'t add button', () => {
     component.addEnabled = false;
     fixture.detectChanges();
 
-    expect(fixture.debugElement.queryAll(By.css('.add-button')).length).toEqual(0);
+    expect(fixture.debugElement.queryAll(By.css('button')).length).toEqual(1);
   });
 
-  it('should submit edit event', () => {
+  it('should submit edit event', (done) => {
     const item = DATA[0];
     fixture.detectChanges();
 
-    let result;
-    component.edit.subscribe((r) => result = r);
+    component.edit.subscribe(result => {
+      expect(result).toBe(item);
+      done();
+    });
     component.onEdit(item);
-
-    expect(result).toBe(item);
   });
+
   it('shouldn\'t submit edit event', () => {
     const item = DATA[0];
     component.editEnabled = false;
