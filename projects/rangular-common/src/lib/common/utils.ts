@@ -60,7 +60,7 @@ export function isNullOrUndefinedOrEmpty(item: string): boolean {
   return isNullOrUndefined(item) || trim(item) === '';
 }
 
-export function getEnumModelValue(value: string, items: EnumModel[]) {
+export function getEnumModelValue(value: any, items: EnumModel[]) {
   if (isNullOrUndefined(items)) {
     return value;
   }
@@ -85,7 +85,6 @@ export function convertNumbersToEnglish(value: string): string {
   value = value.replace(/۹/g, '9');
   return value;
 }
-
 
 export function replaceArabicAlpha(value: string): string {
   return value

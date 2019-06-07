@@ -16,10 +16,9 @@ export class CrudTableComponent implements OnInit {
   @Input() type: string;
   @Input() columns: ColumnModel[];
   @Input() rowHeight = 48;
-  @Input() headerHeight = 48;
+  @Input() headerHeight = 56;
   @Input() rowSelection = 'multiple';
   @Input() pagination = true;
-  @Input() navigateToNextCell = this.defaultNavigateToNextCell;
   @Input() addEnabled = true;
   @Input() editEnabled = true;
   @Input() removeEnabled = true;

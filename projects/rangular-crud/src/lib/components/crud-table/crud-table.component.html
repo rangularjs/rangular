@@ -7,7 +7,7 @@
         <span flex></span>
         <ng-template [ngIf]="removeEnabled">
           <button mat-icon-button (click)="onDeleteClicked()" type="button"
-                  [disabled]="selectedRows?.length===0">
+                  [disabled]="selectedRows?.length===0" class="delete-button">
             <mat-icon>delete</mat-icon>
           </button>
         </ng-template>
@@ -26,14 +26,14 @@
         [paginationPageSize]="25"
         [rowHeight]="rowHeight"
         [headerHeight]="headerHeight"
-        [navigateToNextCell]="navigateToNextCell"
+        [navigateToNextCell]="defaultNavigateToNextCell"
         (selectionChanged)="onSelectionChanged()"
         [getRowNodeId]="getRowNodeId"
         (cellKeyPress)="cellKeyPress.emit($event)"
         [rowSelection]="rowSelection">
       </ag-grid-angular>
       <ng-template [ngIf]="addEnabled">
-        <button mat-fab class="mat-fab-bottom-right" (click)="add.emit()" type="button">
+        <button mat-fab class="add-button mat-fab-bottom-right" (click)="add.emit()" type="button">
           <mat-icon>add</mat-icon>
         </button>
       </ng-template>

@@ -1,6 +1,6 @@
 import {EventEmitter, Input, Output} from '@angular/core';
 import {FormGroup} from '@angular/forms';
-import {isNullOrUndefined, setFormValuesFromObject} from './utils';
+import {isNullOrUndefined} from './utils';
 
 /**
  * Base form for CRUD.
@@ -21,6 +21,7 @@ export abstract class AbstractFormComponent<T> {
    * Local item.
    */
   _item: T;
+  isPending = false;
 
   get item(): T {
     return this._item;
@@ -34,7 +35,17 @@ export abstract class AbstractFormComponent<T> {
   set item(obj: T) {
     this._item = obj;
     if (!isNullOrUndefined(obj)) {
-      setFormValuesFromObject(this.form, obj);
+      this.form.patchValue(obj);
+    }
+  }
+
+  @Input()
+  set pending(value: boolean) {
+    this.isPending = value;
+    if (value) {
+      this.form.disable();
+    } else {
+      this.form.enable();
     }
   }
 
@@ -42,7 +53,7 @@ export abstract class AbstractFormComponent<T> {
    * This method check form validations and fire submit event after merge local item and form values
    */
   submit() {
-    if (this.form.valid) {
+    if (this.form.valid && !this.isPending) {
       const obj = this._item as Object;
       this.submitted.emit({...obj, ...this.form.value});
     }
