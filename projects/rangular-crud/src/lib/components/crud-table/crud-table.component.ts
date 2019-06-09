@@ -1,6 +1,6 @@
 import {ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {BaseEntity} from 'rangular-common';
-import {map} from 'lodash';
+import {get, map} from 'lodash';
 import {ColumnModel} from '../../models/column.model';
 import {LOCALE_TEXT} from '../../utils';
 
@@ -22,6 +22,9 @@ export class CrudTableComponent implements OnInit {
   @Input() addEnabled = true;
   @Input() editEnabled = true;
   @Input() removeEnabled = true;
+  @Input() theme = 'ag-theme-material';
+  @Input() showOddColor = true;
+  @Input() oddRowColor = '#FAFAFA';
 
   @Output() add = new EventEmitter();
   @Output() edit = new EventEmitter<BaseEntity>();
@@ -33,6 +36,7 @@ export class CrudTableComponent implements OnInit {
 
   ngOnInit() {
     this.defaultNavigateToNextCell = this.defaultNavigateToNextCell.bind(this);
+    this.rowStyle = this.rowStyle.bind(this);
   }
 
   onGridReady(e: any) {
@@ -64,6 +68,18 @@ export class CrudTableComponent implements OnInit {
   onEdit(item: BaseEntity) {
     if (this.editEnabled) {
       this.edit.emit(item);
+    }
+  }
+
+  rowStyle(params) {
+    if (!this.showOddColor) {
+      return;
+    }
+    if (get(params, 'node.selected')) {
+      return {background: ''};
+    }
+    if (get(params, 'node.rowIndex') % 2 === 0) {
+      return {background: '#FAFAFA'};
     }
   }
 

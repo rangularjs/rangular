@@ -14,7 +14,8 @@
       </div>
       <mat-divider class="relative"></mat-divider>
       <ag-grid-angular
-        class="ag-theme-material size-grid"
+        flex
+        [ngClass]="theme"
         [enableRtl]="true"
         [rowData]="items"
         [columnDefs]="columns"
@@ -25,6 +26,7 @@
         [pagination]="pagination"
         [paginationPageSize]="25"
         [rowHeight]="rowHeight"
+        [getRowStyle]="rowStyle"
         [headerHeight]="headerHeight"
         [navigateToNextCell]="defaultNavigateToNextCell"
         (selectionChanged)="onSelectionChanged()"
