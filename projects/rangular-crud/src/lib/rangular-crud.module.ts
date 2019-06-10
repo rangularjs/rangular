@@ -2,7 +2,7 @@ import {NgModule} from '@angular/core';
 import {CrudTableComponent} from './components/crud-table/crud-table.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {CommonModule} from '@angular/common';
-import {MatButtonModule, MatCardModule, MatCommonModule, MatDividerModule, MatIconModule} from '@angular/material';
+import {MatButtonModule, MatCardModule, MatCommonModule, MatDividerModule, MatIconModule, MatTooltipModule} from '@angular/material';
 import {CovalentCommonModule, CovalentLayoutModule} from '@covalent/core';
 import {RangularCommonModule} from 'rangular-common';
 import {AgGridModule} from 'ag-grid-angular';
@@ -22,11 +22,12 @@ const COMPONENTS = [CrudTableComponent];
     MatCommonModule,
     MatDividerModule,
     MatCardModule,
+    MatTooltipModule,
     CovalentLayoutModule,
     CovalentCommonModule,
     RangularCommonModule,
     RangularMaterialModule,
-    AgGridModule.withComponents([]),
+    AgGridModule.withComponents([])
   ],
 })
 export class RangularCrudModule {
