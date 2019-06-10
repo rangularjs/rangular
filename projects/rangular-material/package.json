@@ -1,7 +1,7 @@
 {
   "name": "rangular-material",
   "description": "Angular Material Components created by the RANIS.",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "keywords": [
     "angular",
     "library",
@@ -20,7 +20,7 @@
     "@angular/animations": "^7.0.0",
     "@angular/cdk": "^7.0.0",
     "@angular/material": "^7.0.0",
-    "@covalent/core": "^2.0.0-beta.4",
+    "@covalent/core": "^2.0.1",
     "rangular-common": "^0.0.0"
   }
 }
