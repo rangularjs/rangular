@@ -8,4 +8,5 @@ export interface ColumnModel {
   minWidth?: number;
   suppressSizeToFit?: boolean;
   width?: number;
+  cellRendererFramework?: any;
 }
