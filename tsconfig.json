@@ -35,6 +35,12 @@
       ],
       "rangular-crud/*": [
         "dist/rangular-crud/*"
+      ],
+      "rangular-pipes": [
+        "dist/rangular-pipes"
+      ],
+      "rangular-pipes/*": [
+        "dist/rangular-pipes/*"
       ]
     }
   }
