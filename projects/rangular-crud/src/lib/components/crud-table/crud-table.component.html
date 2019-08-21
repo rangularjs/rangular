@@ -12,12 +12,14 @@
           </button>
         </ng-template>
         <ng-template [ngIf]="filterEnabled">
-          <button mat-icon-button (click)="onFilterClicked()" type="button" matTooltip="فیلتر">
-            <mat-icon>filter_list</mat-icon>
+          <button mat-icon-button (click)="onFilterClicked()" type="button"
+                  [matTooltip]="showFilter?'بستن فیلتر':'باز کردن فیلتر'">
+            <mat-icon>{{showFilter ? 'close' : 'filter_list'}}</mat-icon>
           </button>
         </ng-template>
       </div>
       <ng-template [ngIf]="filterEnabled && showFilter">
+        <mat-divider class="relative"></mat-divider>
         <ng-content></ng-content>
       </ng-template>
       <mat-divider class="relative"></mat-divider>
