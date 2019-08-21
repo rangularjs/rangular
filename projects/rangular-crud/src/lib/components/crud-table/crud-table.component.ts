@@ -31,11 +31,11 @@ export class CrudTableComponent implements OnInit {
   @Output() add = new EventEmitter();
   @Output() edit = new EventEmitter<BaseEntity>();
   @Output() remove = new EventEmitter<number[]>();
-  @Output() filter = new EventEmitter<void>();
   @Output() cellKeyPress = new EventEmitter<any>();
 
   gridApi: any;
   selectedRows: any[] = [];
+  showFilter = false;
 
   ngOnInit() {
     this.defaultNavigateToNextCell = this.defaultNavigateToNextCell.bind(this);
@@ -75,9 +75,7 @@ export class CrudTableComponent implements OnInit {
   }
 
   onFilterClicked() {
-    if (this.filterEnabled) {
-      this.filter.emit();
-    }
+    this.showFilter = !this.showFilter;
   }
 
   rowStyle(params) {

@@ -109,15 +109,4 @@ describe('CrudTableComponent', () => {
     expect(fixture.debugElement.queryAll(By.css('button')).length).toEqual(3);
   });
 
-  it('shouldn\'t submit filter event', () => {
-    component.filterEnabled = false;
-    fixture.detectChanges();
-
-    let result;
-    component.filter.subscribe((r) => result = r);
-    component.onFilterClicked();
-
-    expect(result).toBeFalsy();
-  });
-
 });

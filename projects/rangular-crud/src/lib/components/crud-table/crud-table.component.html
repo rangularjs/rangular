@@ -17,6 +17,9 @@
           </button>
         </ng-template>
       </div>
+      <ng-template [ngIf]="filterEnabled && showFilter">
+        <ng-content></ng-content>
+      </ng-template>
       <mat-divider class="relative"></mat-divider>
       <ag-grid-angular
         flex
