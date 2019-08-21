@@ -22,6 +22,7 @@ export class CrudTableComponent implements OnInit {
   @Input() addEnabled = true;
   @Input() editEnabled = true;
   @Input() removeEnabled = true;
+  @Input() filterEnabled = false;
   @Input() theme = 'ag-theme-material';
   @Input() showOddColor = true;
   @Input() oddRowColor = '#FAFAFA';
@@ -30,6 +31,7 @@ export class CrudTableComponent implements OnInit {
   @Output() add = new EventEmitter();
   @Output() edit = new EventEmitter<BaseEntity>();
   @Output() remove = new EventEmitter<number[]>();
+  @Output() filter = new EventEmitter<void>();
   @Output() cellKeyPress = new EventEmitter<any>();
 
   gridApi: any;
@@ -69,6 +71,12 @@ export class CrudTableComponent implements OnInit {
   onEdit(item: BaseEntity) {
     if (this.editEnabled) {
       this.edit.emit(item);
+    }
+  }
+
+  onFilterClicked() {
+    if (this.filterEnabled) {
+      this.filter.emit();
     }
   }
 

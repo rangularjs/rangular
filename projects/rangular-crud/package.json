@@ -1,7 +1,7 @@
 {
   "name": "rangular-crud",
   "description": "A crud table base on ag grid",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "keywords": [
     "angular",
     "ag-grid"

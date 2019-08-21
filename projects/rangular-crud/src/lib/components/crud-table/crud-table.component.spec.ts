@@ -78,6 +78,7 @@ describe('CrudTableComponent', () => {
     expect(fixture.debugElement.queryAll(By.css('button')).length).toEqual(1);
   });
 
+
   it('should submit edit event', (done) => {
     const item = DATA[0];
     fixture.detectChanges();
@@ -100,4 +101,23 @@ describe('CrudTableComponent', () => {
 
     expect(result).toBeFalsy();
   });
+
+  it('should display filter button', () => {
+    component.filterEnabled = true;
+    fixture.detectChanges();
+
+    expect(fixture.debugElement.queryAll(By.css('button')).length).toEqual(3);
+  });
+
+  it('shouldn\'t submit filter event', () => {
+    component.filterEnabled = false;
+    fixture.detectChanges();
+
+    let result;
+    component.filter.subscribe((r) => result = r);
+    component.onFilterClicked();
+
+    expect(result).toBeFalsy();
+  });
+
 });
