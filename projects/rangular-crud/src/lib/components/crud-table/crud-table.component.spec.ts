@@ -1,9 +1,13 @@
 import {ComponentFixture, TestBed} from '@angular/core/testing';
-import {CrudTableComponent} from './crud-table.component';
-import {AgGridModule, AgGridNg2} from 'ag-grid-angular';
-import {MatButtonModule, MatCardModule, MatDividerModule, MatIconModule} from '@angular/material';
-import {By} from '@angular/platform-browser';
 import {ChangeDetectionStrategy} from '@angular/core';
+import {By} from '@angular/platform-browser';
+import {AgGridAngular, AgGridModule} from 'ag-grid-angular';
+import {MatTooltipModule} from '@angular/material/tooltip';
+import {MatIconModule} from '@angular/material/icon';
+import {MatDividerModule} from '@angular/material/divider';
+import {MatCardModule} from '@angular/material/card';
+import {MatButtonModule} from '@angular/material/button';
+import {CrudTableComponent} from './crud-table.component';
 import {ColumnModel} from '../../models/column.model';
 
 describe('CrudTableComponent', () => {
@@ -20,6 +24,7 @@ describe('CrudTableComponent', () => {
         MatDividerModule,
         MatCardModule,
         MatButtonModule,
+        MatTooltipModule,
       ],
       declarations: [CrudTableComponent]
     }).compileComponents();
@@ -40,7 +45,7 @@ describe('CrudTableComponent', () => {
   it('should create the component', () => {
     fixture.detectChanges();
     expect(component).toBeTruthy();
-    expect(fixture.debugElement.query(By.directive(AgGridNg2))).toBeTruthy();
+    expect(fixture.debugElement.query(By.directive(AgGridAngular))).toBeTruthy();
   });
 
   it('should haven\'t remove button', () => {

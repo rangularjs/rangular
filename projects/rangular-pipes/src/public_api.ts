@@ -3,4 +3,5 @@
  */
 
 export * from './lib/number-separator.pipe';
+export * from './lib/jalali.pipe';
 export * from './lib/rangular-pipes.module';

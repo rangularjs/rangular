@@ -1,7 +1,7 @@
 {
   "name": "rangular-common",
   "description": "Ranis common classes for Angular",
-  "version": "0.0.14",
+  "version": "8.0.0",
   "keywords": [
     "angular",
     "common"
@@ -13,8 +13,8 @@
   },
   "homepage": "https://github.com/rangularjs/rangular",
   "peerDependencies": {
-    "@angular/common": "^7.0.0",
-    "@angular/core": "^7.0.0",
+    "@angular/common": "^8.2.14",
+    "@angular/core": "^8.2.14",
     "lodash": "^4.17.11"
   }
 }
