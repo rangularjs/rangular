@@ -1,0 +1,6 @@
+<div layout="column" class="text-center" layout-align="center center">
+  <button mat-icon-button (click)="call($event)"
+          [matTooltip]="params?.tooltip" [disabled]="isDisabled()">
+    <mat-icon class="tc-grey-500" [ngClass]="getClasses()">{{params?.icon}}</mat-icon>
+  </button>
+</div>

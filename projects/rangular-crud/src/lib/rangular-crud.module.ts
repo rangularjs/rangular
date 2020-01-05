@@ -15,8 +15,9 @@ import {RangularCommonModule} from 'rangular-common';
 import {RangularMaterialModule} from 'rangular-material';
 import {CrudTableComponent} from './components/crud-table/crud-table.component';
 import {CheckboxCellComponent} from './components/checkbox-cell/checkbox-cell.component';
+import {ButtonCellComponent} from './components/button-cell/button-cell.component';
 
-const COMPONENTS = [CrudTableComponent, CheckboxCellComponent];
+const COMPONENTS = [CrudTableComponent, CheckboxCellComponent, ButtonCellComponent];
 
 @NgModule({
   declarations: [...COMPONENTS],
@@ -36,7 +37,7 @@ const COMPONENTS = [CrudTableComponent, CheckboxCellComponent];
     CovalentCommonModule,
     RangularCommonModule,
     RangularMaterialModule,
-    AgGridModule.withComponents([CheckboxCellComponent])
+    AgGridModule.withComponents([CheckboxCellComponent, ButtonCellComponent]),
   ],
 })
 export class RangularCrudModule {

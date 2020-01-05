@@ -63,7 +63,7 @@
     "lodash": "^4.17.11",
     "moment-jalaali": "^0.9.1",
     "rangular-common": "file:dist/rangular-common/rangular-common-8.0.0.tgz",
-    "rangular-crud": "file:dist/rangular-crud/rangular-crud-8.0.0.tgz",
+    "rangular-crud": "file:dist/rangular-crud/rangular-crud-8.1.0.tgz",
     "rangular-material": "file:dist/rangular-material/rangular-material-8.0.0.tgz",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",

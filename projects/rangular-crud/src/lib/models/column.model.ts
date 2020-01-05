@@ -9,4 +9,13 @@ export interface ColumnModel {
   suppressSizeToFit?: boolean;
   width?: number;
   cellRendererFramework?: any;
+  cellStyle?: any;
+  cellRendererParams?: CellRendererParams;
+}
+
+export interface CellRendererParams {
+  action: Function;
+  icon: string;
+  tooltip: string;
+  iconClass: string;
 }

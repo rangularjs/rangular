@@ -6,12 +6,12 @@ import {MatDialog, MatIconRegistry} from '@angular/material';
 import {DomSanitizer} from '@angular/platform-browser';
 import {TdDialogService} from '@covalent/core/dialogs';
 import {Subject} from 'rxjs';
-import {CheckboxCellComponent, ColumnModel} from 'rangular-crud';
+import {ButtonCellComponent, CheckboxCellComponent, ColumnModel} from 'rangular-crud';
 
 @Component({
   selector: 'app-home-page',
   templateUrl: './home-page.component.html',
-  styleUrls: ['./home-page.component.scss']
+  styleUrls: ['./home-page.component.scss'],
 })
 export class HomePageComponent {
 
@@ -34,6 +34,19 @@ export class HomePageComponent {
   columns: ColumnModel[] = [
     {headerName: 'Name', field: 'name', checkboxSelection: true},
     {headerName: 'Status', field: 'active', cellRendererFramework: CheckboxCellComponent},
+    {
+      field: 'name',
+      headerName: '',
+      cellRendererFramework: ButtonCellComponent,
+      width: 90,
+      suppressSizeToFit: true,
+      cellRendererParams: {
+        action: () => console.log('Action clicked.'),
+        icon: 'exit_to_app',
+        tooltip: 'ثبت خروج',
+        iconClass: 'flip-icon',
+      },
+    },
   ];
 
   constructor(private dialogService: DialogService,
