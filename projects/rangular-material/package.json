@@ -20,7 +20,7 @@
     "@angular/animations": "^8.0.0",
     "@angular/cdk": "^8.0.0",
     "@angular/material": "^8.0.0",
-    "@covalent/core": "^2.1.1",
+    "@covalent/core": "^3.0.0-beta.2",
     "rangular-common": "^8.0.0"
   }
 }
