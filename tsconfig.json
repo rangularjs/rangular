@@ -41,6 +41,12 @@
       ],
       "rangular-pipes/*": [
         "dist/rangular-pipes/*"
+      ],
+      "rangular-ngxs": [
+        "dist/rangular-ngxs"
+      ],
+      "rangular-ngxs/*": [
+        "dist/rangular-ngxs/*"
       ]
     }
   }
