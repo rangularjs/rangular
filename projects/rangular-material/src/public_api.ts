@@ -13,6 +13,7 @@ export * from './lib/interceptors/loading.interceptor';
 export * from './lib/item-selector/item-selector.component';
 export * from './lib/item-selector-dialog/item-selector-dialog.component';
 export * from './lib/prompt-dialog/prompt-dialog.component';
+export * from './lib/form-container/form-container.component';
 export * from './lib/services/notification.service';
 export * from './lib/services/dialog.service';
 export * from './lib/screen-aware.component';

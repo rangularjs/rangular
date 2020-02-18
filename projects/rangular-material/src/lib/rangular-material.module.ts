@@ -13,18 +13,21 @@ import {
   MatIconModule,
   MatInputModule,
   MatListModule,
-  MatSnackBarModule
+  MatSnackBarModule,
 } from '@angular/material';
 import {CovalentCommonModule} from '@covalent/core/common';
 import {CovalentLayoutModule} from '@covalent/core/layout';
 import {CovalentMediaModule} from '@covalent/core/media';
 import {CovalentSearchModule} from '@covalent/core/search';
+import {RangularCommonModule} from 'rangular-common';
 import {DialogTitleComponent} from './dialog-title/dialog-title.component';
 import {EmptyViewComponent} from './empty-view/empty-view.component';
 import {ItemSelectorComponent} from './item-selector/item-selector.component';
 import {ItemSelectorDialogComponent} from './item-selector-dialog/item-selector-dialog.component';
-import {RangularCommonModule} from 'rangular-common';
 import {MessageDialogComponent} from './message-dialog/message-dialog.component';
+import {FormContainerComponent} from './form-container/form-container.component';
+import {MatCardModule} from '@angular/material/card';
+import {MatToolbarModule} from '@angular/material/toolbar';
 
 const COMPONENTS = [
   AvatarComponent,
@@ -36,6 +39,7 @@ const COMPONENTS = [
   ItemSelectorDialogComponent,
   PromptDialogComponent,
   MessageDialogComponent,
+  FormContainerComponent,
 ];
 
 @NgModule({
@@ -49,6 +53,8 @@ const COMPONENTS = [
     MatIconModule,
     MatSnackBarModule,
     MatCommonModule,
+    MatCardModule,
+    MatToolbarModule,
     MatDividerModule,
     MatListModule,
     CovalentSearchModule,
