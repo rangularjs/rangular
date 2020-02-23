@@ -44,11 +44,11 @@ export abstract class AbstractCrudPageComponent<T extends BaseEntity> implements
   }
 
   add() {
-    this.store.dispatch(new Navigate(['/', this.navigationUrl(), '0'], this.navigateQueryParams()));
+    this.store.dispatch(new Navigate([this.baseNavigationUrl(), this.navigationUrl(), '0'], this.navigateQueryParams()));
   }
 
   edit(item: T) {
-    this.store.dispatch(new Navigate(['/', this.navigationUrl(), item.id]));
+    this.store.dispatch(new Navigate([this.baseNavigationUrl(), this.navigationUrl(), item.id]));
   }
 
   remove(ids: number[]) {
@@ -81,5 +81,9 @@ export abstract class AbstractCrudPageComponent<T extends BaseEntity> implements
 
   protected getRemoveMessage(): string {
     return 'آیا مطمئن هستید؟';
+  }
+
+  protected baseNavigationUrl(): string {
+    return '/';
   }
 }
