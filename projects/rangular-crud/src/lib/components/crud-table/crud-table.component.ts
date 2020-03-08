@@ -26,7 +26,9 @@ export class CrudTableComponent implements OnInit {
   @Input() theme = 'ag-theme-material';
   @Input() showOddColor = true;
   @Input() oddRowColor = '#FAFAFA';
+  @Input() addTooltip = 'ثبت آیتم جدید';
   @Input() addButtonClass = 'mat-fab-bottom-right';
+  @Input() defaultColDef: any = {sortable: true, filter: true};
 
   @Output() add = new EventEmitter();
   @Output() edit = new EventEmitter<BaseEntity>();

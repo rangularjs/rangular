@@ -36,6 +36,7 @@
         [pagination]="pagination"
         [paginationPageSize]="25"
         [rowHeight]="rowHeight"
+        [defaultColDef]="defaultColDef"
         [getRowStyle]="rowStyle"
         [headerHeight]="headerHeight"
         [navigateToNextCell]="defaultNavigateToNextCell"
@@ -46,7 +47,7 @@
       </ag-grid-angular>
       <ng-template [ngIf]="addEnabled">
         <button mat-fab [ngClass]="addButtonClass" (click)="add.emit()" type="button"
-                matTooltip="ثبت آیتم جدید">
+                [matTooltip]="addTooltip">
           <mat-icon>add</mat-icon>
         </button>
       </ng-template>

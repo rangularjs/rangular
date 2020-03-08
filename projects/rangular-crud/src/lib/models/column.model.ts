@@ -17,5 +17,6 @@ export interface CellRendererParams {
   action: Function;
   icon: string;
   tooltip: string;
-  iconClass: string;
+  iconClass?: string;
+  disabled?: (item) => boolean;
 }
