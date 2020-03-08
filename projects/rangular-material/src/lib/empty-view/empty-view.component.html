@@ -2,5 +2,6 @@
   <mat-icon class="icon" [ngStyle]="iconStyle" *ngIf="!src">{{icon}}</mat-icon>
   <img [src]="src" *ngIf="src" class="img" [ngStyle]="imgStyle"/>
   <h2 class="message tc-grey-500"><span>{{message}}</span></h2>
-  <button mat-raised-button color="accent" (click)="action.emit()" *ngIf="showButton">{{buttonText}}</button>
+  <button mat-raised-button color="accent" (click)="action.emit()" *ngIf="showButton"
+          type="button">{{buttonText}}</button>
 </div>
