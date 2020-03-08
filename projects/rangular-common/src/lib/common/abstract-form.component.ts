@@ -18,6 +18,11 @@ export abstract class AbstractFormComponent<T> {
   @Output() submitted = new EventEmitter<T>();
 
   /**
+   * This event fire if the cancel button pressed.
+   */
+  @Output() cancel = new EventEmitter<T>();
+
+  /**
    * Local item.
    */
   _item: T;
