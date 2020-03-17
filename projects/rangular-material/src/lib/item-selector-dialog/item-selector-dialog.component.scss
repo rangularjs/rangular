@@ -3,3 +3,14 @@
     padding: 0 !important;
   }
 }
+
+:host {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+  height: 100%;
+}
+
+.size-height-100p {
+  height: 100%;
+}

@@ -1,7 +1,7 @@
 import {ChangeDetectionStrategy, ChangeDetectorRef, Component, EventEmitter, Input, Output, ViewEncapsulation} from '@angular/core';
 import {MatListOption} from '@angular/material';
 import {isNullOrUndefined} from 'rangular-common';
-import {get, isArray, isFunction, isString} from 'lodash';
+import {get, isArray, isFunction, isString, remove} from 'lodash';
 import {isObservable} from 'rxjs';
 
 @Component({
@@ -46,12 +46,8 @@ export class ItemSelectorComponent {
   constructor(private _changeDetector: ChangeDetectorRef) {
   }
 
-  submit(options: MatListOption[]) {
-    const items = [];
-    for (const item of options) {
-      items.push(item.value);
-    }
-    this.submitted.emit(items);
+  submit() {
+    this.submitted.emit(this.selectedItems);
   }
 
   isSelected(item: any): boolean {
@@ -63,14 +59,18 @@ export class ItemSelectorComponent {
   }
 
   filter(query: string) {
+    console.log(query);
     if (query && this.items) {
       this.filteredItems = this.items.filter(i => {
-        const f = i[this.displayField];
-        if (f && isFunction(f.indexOf)) {
-          return f.indexOf(query) !== -1;
+        if (!isFunction(this.displayField)) {
+          const f = i[this.displayField];
+          if (f && isFunction(f.indexOf)) {
+            return f.indexOf(query) !== -1;
+          }
         }
         return true;
       });
+      console.log(this.filteredItems);
     } else {
       this.filteredItems = [...this.items];
     }
@@ -82,6 +82,14 @@ export class ItemSelectorComponent {
     }
     if (isFunction(this.displayField)) {
       return this.displayField(item);
+    }
+  }
+
+  toggleSelect(item: any) {
+    if (this.isSelected(item)) {
+      remove(this.selectedItems, obj => this.selectedFn(obj, item));
+    } else {
+      this.selectedItems.push(item);
     }
   }
 

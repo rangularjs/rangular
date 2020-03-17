@@ -12,15 +12,17 @@
         <mat-icon>close</mat-icon>
       </button>
     </div>
-    <ran-item-selector flex
-                       [items]="data.items"
-                       [showFilter]="true"
-                       [displayField]="data.displayField"
-                       [icon]="data.icon"
-                       [multiple]="data.multiple"
-                       [selectedFn]="data.selectedFn"
-                       [selectedItems]="data.selectedItems"
-                       (itemSelected)="submit($event)"
-                       (submitted)="submit($event)"></ran-item-selector>
+    <div flex class="overflow-hidden size-height-100p">
+      <ran-item-selector flex
+                         [items]="data.items"
+                         [showFilter]="true"
+                         [displayField]="data.displayField"
+                         [icon]="data.icon"
+                         [multiple]="data.multiple"
+                         [selectedFn]="data.selectedFn"
+                         [selectedItems]="data.selectedItems"
+                         (itemSelected)="submit($event)"
+                         (submitted)="submit($event)"></ran-item-selector>
+    </div>
   </div>
 </div>
