@@ -1,10 +1,11 @@
 import {HttpParams} from '@angular/common/http';
+import {isNullOrUndefined} from './utils';
 
 export const createRequestOption = (req?: any): HttpParams => {
   let options: HttpParams = new HttpParams();
   if (req) {
     Object.keys(req).forEach(key => {
-      if (key !== 'sort') {
+      if (key !== 'sort' && !isNullOrUndefined(req[key])) {
         options = options.set(key, req[key]);
       }
     });
