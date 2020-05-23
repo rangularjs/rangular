@@ -20,7 +20,7 @@ export abstract class AbstractFormComponent<T> {
   /**
    * This event fire if the cancel button pressed.
    */
-  @Output() cancel = new EventEmitter<T>();
+  @Output() cancel = new EventEmitter<void>();
 
   /**
    * Local item.
@@ -58,6 +58,7 @@ export abstract class AbstractFormComponent<T> {
    * This method check form validations and fire submit event after merge local item and form values
    */
   submit() {
+    this.form.markAllAsTouched();
     if (this.form.valid && !this.isPending) {
       const obj = this._item as Object;
       this.submitted.emit({...obj, ...this.form.value});
