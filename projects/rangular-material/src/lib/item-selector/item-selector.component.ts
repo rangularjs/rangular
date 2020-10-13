@@ -1,5 +1,5 @@
 import {ChangeDetectionStrategy, ChangeDetectorRef, Component, EventEmitter, Input, Output, ViewEncapsulation} from '@angular/core';
-import {MatListOption} from '@angular/material';
+import { MatListOption } from '@angular/material/list';
 import {isNullOrUndefined} from 'rangular-common';
 import {get, isArray, isFunction, isString, remove} from 'lodash';
 import {isObservable} from 'rxjs';

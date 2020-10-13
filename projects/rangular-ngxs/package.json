@@ -1,7 +1,7 @@
 {
   "name": "rangular-ngxs",
   "description": "Helpers library for NGXS created by the RANIS.",
-  "version": "8.2.0",
+  "version": "9.0.0",
   "keywords": [
     "angular",
     "library",
@@ -14,11 +14,11 @@
   },
   "homepage": "https://github.com/rangularjs/rangular-ngxs",
   "peerDependencies": {
-    "@angular/common": "^8.0.0",
-    "@angular/core": "^8.0.0",
+    "@angular/common": "^9.0.0",
+    "@angular/core": "^9.0.0",
     "lodash": "^4.0.0",
     "@ngxs/store": "^3.6.2",
     "@ngxs/router-plugin": "^3.6.2",
-    "rangular-common": "^8.0.0"
+    "rangular-common": "^9.0.0"
   }
 }
