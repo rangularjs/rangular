@@ -48,7 +48,8 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "postinstall": "ngcc --source ./node_modules --properties es2015 browser module main --first-only --create-ivy-entry-points"
   },
   "private": true,
   "dependencies": {
@@ -70,11 +71,11 @@
     "ag-grid-community": "^22.0.0",
     "lodash": "^4.17.11",
     "moment-jalaali": "^0.9.1",
-    "rangular-common": "^9.0.0",
-    "rangular-crud": "file:dist/rangular-crud",
-    "rangular-material": "file:dist/rangular-material",
-    "rangular-ngxs": "^9.0.0",
-    "rangular-pipes": "^9.0.0",
+    "rangular-common": "^9.0.1",
+    "rangular-crud": "^9.0.1",
+    "rangular-material": "^9.0.1",
+    "rangular-ngxs": "^9.0.1",
+    "rangular-pipes": "^9.0.1",
     "rxjs": "~6.6.3",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"
