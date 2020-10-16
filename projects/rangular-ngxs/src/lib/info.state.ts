@@ -1,3 +1,4 @@
+import {Injectable} from '@angular/core';
 import {Action, Selector, State, StateContext} from '@ngxs/store';
 import {map} from 'rxjs/operators';
 import {InfoLoaded, InfoModel, InfoService, InfoStateModel, LoadInfo} from 'rangular-common';
@@ -8,6 +9,7 @@ import {InfoLoaded, InfoModel, InfoService, InfoStateModel, LoadInfo} from 'rang
     info: null,
   },
 })
+@Injectable()
 export class InfoState {
 
   constructor(private service: InfoService) {
