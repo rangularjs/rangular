@@ -6,7 +6,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatCardModule} from '@angular/material/card';
 import {MatCheckboxModule} from '@angular/material/checkbox';
-import {MatCommonModule} from '@angular/material';
+import { MatCommonModule } from '@angular/material/core';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {CovalentCommonModule} from '@covalent/core/common';
 import {CovalentLayoutModule} from '@covalent/core/layout';

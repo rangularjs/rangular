@@ -1,7 +1,8 @@
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 import {ButtonCellComponent} from './button-cell.component';
 import {AgGridModule} from 'ag-grid-angular';
-import {MatIconModule, MatTooltipModule} from '@angular/material';
+import { MatIconModule } from '@angular/material/icon';
+import { MatTooltipModule } from '@angular/material/tooltip';
 import {CovalentLayoutModule} from '@covalent/core/layout';
 import {By} from '@angular/platform-browser';
 import {ChangeDetectionStrategy} from '@angular/core';

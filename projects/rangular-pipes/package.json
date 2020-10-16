@@ -1,7 +1,7 @@
 {
   "name": "rangular-pipes",
   "description": "Angular pipes created by the RANIS.",
-  "version": "8.0.1",
+  "version": "9.0.1",
   "keywords": [
     "angular",
     "library",
@@ -14,9 +14,9 @@
   },
   "homepage": "https://github.com/rangularjs/rangular",
   "peerDependencies": {
-    "@angular/common": "^8.0.0",
-    "@angular/core": "^8.0.0",
-    "rangular-common": "^8.0.0",
+    "@angular/common": "^9.0.0",
+    "@angular/core": "^9.0.0",
+    "rangular-common": "^9.0.0",
     "lodash": "^4.0.0"
   }
 }

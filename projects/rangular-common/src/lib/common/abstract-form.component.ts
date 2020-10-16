@@ -1,10 +1,11 @@
-import {EventEmitter, Input, Output} from '@angular/core';
+import { EventEmitter, Input, Output, Directive } from '@angular/core';
 import {FormGroup} from '@angular/forms';
 import {isNullOrUndefined} from './utils';
 
 /**
  * Base form for CRUD.
  */
+@Directive()
 export abstract class AbstractFormComponent<T> {
 
   /**

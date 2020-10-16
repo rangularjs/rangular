@@ -10,13 +10,14 @@
       "prefix": "app",
       "schematics": {
         "@schematics/angular:component": {
-          "styleext": "scss"
+          "style": "scss"
         }
       },
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "aot": true,
             "outputPath": "dist/rangular-app",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -34,6 +35,12 @@
           },
           "configurations": {
             "production": {
+              "budgets": [
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb"
+                }
+              ],
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
@@ -142,7 +149,8 @@
           },
           "configurations": {
             "production": {
-              "project": "projects/rangular-common/ng-package.prod.json"
+              "project": "projects/rangular-common/ng-package.prod.json",
+              "tsConfig": "projects/rangular-common/tsconfig.lib.prod.json"
             }
           }
         },
@@ -182,7 +190,8 @@
           },
           "configurations": {
             "production": {
-              "project": "projects/rangular-material/ng-package.prod.json"
+              "project": "projects/rangular-material/ng-package.prod.json",
+              "tsConfig": "projects/rangular-material/tsconfig.lib.prod.json"
             }
           }
         },
@@ -222,7 +231,8 @@
           },
           "configurations": {
             "production": {
-              "project": "projects/rangular-crud/ng-package.prod.json"
+              "project": "projects/rangular-crud/ng-package.prod.json",
+              "tsConfig": "projects/rangular-crud/tsconfig.lib.prod.json"
             }
           }
         },
@@ -262,7 +272,8 @@
           },
           "configurations": {
             "production": {
-              "project": "projects/rangular-pipes/ng-package.prod.json"
+              "project": "projects/rangular-pipes/ng-package.prod.json",
+              "tsConfig": "projects/rangular-pipes/tsconfig.lib.prod.json"
             }
           }
         },
@@ -302,7 +313,8 @@
           },
           "configurations": {
             "production": {
-              "project": "projects/rangular-ngxs/ng-package.prod.json"
+              "project": "projects/rangular-ngxs/ng-package.prod.json",
+              "tsConfig": "projects/rangular-ngxs/tsconfig.lib.prod.json"
             }
           }
         },
@@ -329,5 +341,8 @@
       }
     }
   },
-  "defaultProject": "rangular-app"
+  "defaultProject": "rangular-app",
+  "cli": {
+    "analytics": "3492c51b-27c3-460f-937c-f34b346571ec"
+  }
 }

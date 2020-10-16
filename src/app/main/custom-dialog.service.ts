@@ -1,5 +1,5 @@
 import {Injectable, NgZone} from '@angular/core';
-import {MatDialog, MatDialogConfig, MatDialogRef} from '@angular/material';
+import { MatDialog, MatDialogConfig, MatDialogRef } from '@angular/material/dialog';
 import {ComponentType} from '@angular/cdk/portal';
 import {ConfirmDialogComponent, DialogService, PromptDialogComponent, MessageDialogComponent} from 'rangular-material';
 
