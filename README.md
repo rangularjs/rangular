@@ -6,7 +6,7 @@ Rangular is a reusable library from Ranis for building web applications.It is ba
 
 ## Setup
 
-* Ensure you have Node 8.9.4+ and NPM 5+ (or Yarn 1.3.2+) installed.
+* Ensure you have Node 12.16.2+ and NPM 6+ installed.
 * Install Angular CLI npm i -g @angular/cli
 * Install Typescript npm i -g typescript
 * Install TSLint npm install -g tslint
