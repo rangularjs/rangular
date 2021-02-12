@@ -1,4 +1,4 @@
-import {OnDestroy, OnInit} from '@angular/core';
+import { OnDestroy, OnInit, Directive } from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {Store} from '@ngxs/store';
 import {get} from 'lodash';
@@ -6,6 +6,7 @@ import {BaseEntity} from 'rangular-common';
 import {Observable} from 'rxjs';
 import {getIsEditMode, getPending, getSelectedItem} from './shared-selectors';
 
+@Directive()
 export abstract class AbstractFormPageComponent<T extends BaseEntity> implements OnInit, OnDestroy {
 
   isEditMode$: Observable<boolean>;

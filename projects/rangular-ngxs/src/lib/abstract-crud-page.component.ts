@@ -1,4 +1,4 @@
-import {OnInit} from '@angular/core';
+import { OnInit, Directive } from '@angular/core';
 import {Navigate} from '@ngxs/router-plugin';
 import {Store} from '@ngxs/store';
 import {BaseEntity, isNullOrUndefined} from 'rangular-common';
@@ -7,6 +7,7 @@ import {DialogService} from 'rangular-material';
 import {Observable} from 'rxjs';
 import {getItems} from './shared-selectors';
 
+@Directive()
 export abstract class AbstractCrudPageComponent<T extends BaseEntity> implements OnInit {
 
   items$: Observable<T[]>;

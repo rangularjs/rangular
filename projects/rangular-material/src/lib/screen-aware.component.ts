@@ -1,8 +1,9 @@
 import {TdMediaService} from '@covalent/core/media';
-import {ChangeDetectorRef, OnDestroy, OnInit} from '@angular/core';
+import { ChangeDetectorRef, OnDestroy, OnInit, Directive } from '@angular/core';
 import {Subscription} from 'rxjs';
 import {isNullOrUndefined} from 'rangular-common';
 
+@Directive()
 export abstract class ScreenAwareComponent implements OnInit, OnDestroy {
 
   isSmallScreen = false;
