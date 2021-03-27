@@ -1,4 +1,4 @@
-import {async} from '@angular/core/testing';
+import { waitForAsync } from '@angular/core/testing';
 import {createComponentFactory, Spectator} from '@ngneat/spectator';
 
 import {FormContainerComponent} from './form-container.component';
@@ -12,7 +12,7 @@ describe('FormContainerComponent', () => {
     mocks: []
   });
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     spectator = createComponent();
   }));
 

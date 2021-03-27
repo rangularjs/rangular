@@ -49,7 +49,6 @@
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
-              "extractCss": true,
               "namedChunks": false,
               "aot": true,
               "extractLicenses": true,
@@ -140,7 +139,7 @@
       "prefix": "ran",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
+          "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
             "tsConfig": "projects/rangular-common/tsconfig.lib.json",
             "project": "projects/rangular-common/ng-package.json"
@@ -181,7 +180,7 @@
       "prefix": "ran",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
+          "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
             "tsConfig": "projects/rangular-material/tsconfig.lib.json",
             "project": "projects/rangular-material/ng-package.json"
@@ -222,7 +221,7 @@
       "prefix": "ran",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
+          "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
             "tsConfig": "projects/rangular-crud/tsconfig.lib.json",
             "project": "projects/rangular-crud/ng-package.json"
@@ -263,7 +262,7 @@
       "prefix": "lib",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
+          "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
             "tsConfig": "projects/rangular-pipes/tsconfig.lib.json",
             "project": "projects/rangular-pipes/ng-package.json"
@@ -304,7 +303,7 @@
       "prefix": "ran",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
+          "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
             "tsConfig": "projects/rangular-ngxs/tsconfig.lib.json",
             "project": "projects/rangular-ngxs/ng-package.json"
