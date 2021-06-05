@@ -8,7 +8,7 @@ import {MatDividerModule} from '@angular/material/divider';
 import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 import {CrudTableComponent} from './crud-table.component';
-import {ColumnModel} from '../../models/column.model';
+import {ColumnModel} from '../../../../../rangular-common/src/lib/models/column.model';
 
 describe('CrudTableComponent', () => {
   let fixture: ComponentFixture<CrudTableComponent>;

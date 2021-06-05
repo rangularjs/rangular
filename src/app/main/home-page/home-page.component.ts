@@ -1,13 +1,13 @@
 import {Component} from '@angular/core';
-import {DialogService} from 'rangular-common';
+import {ColumnModel, DialogService} from 'rangular-common';
 import {Item} from '../models/item.model';
 import {CustomDialogComponent} from '../custom-dialog/custom-dialog.component';
-import { MatDialog } from '@angular/material/dialog';
-import { MatIconRegistry } from '@angular/material/icon';
+import {MatDialog} from '@angular/material/dialog';
+import {MatIconRegistry} from '@angular/material/icon';
 import {DomSanitizer} from '@angular/platform-browser';
 import {TdDialogService} from '@covalent/core/dialogs';
 import {Subject} from 'rxjs';
-import {ButtonCellComponent, CheckboxCellComponent, ColumnModel} from 'rangular-crud';
+import {ButtonCellComponent, CheckboxCellComponent} from 'rangular-crud';
 
 @Component({
   selector: 'app-home-page',

@@ -1,8 +1,7 @@
 import {Directive, OnInit} from '@angular/core';
 import {Navigate} from '@ngxs/router-plugin';
 import {Store} from '@ngxs/store';
-import {BaseEntity, DialogService, isNullOrUndefined} from 'rangular-common';
-import {ColumnModel} from 'rangular-crud';
+import {BaseEntity, ColumnModel, DialogService, isNullOrUndefined} from 'rangular-common';
 import {Observable} from 'rxjs';
 import {getItems} from './shared-selectors';
 

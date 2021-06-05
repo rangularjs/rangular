@@ -26,3 +26,4 @@ export * from './lib/directives/only-number.directive';
 export * from './lib/directives/english-number.directive';
 export * from './lib/directives/autofocus.directive';
 export * from './lib/services/dialog.service';
+export * from './lib/models/column.model';

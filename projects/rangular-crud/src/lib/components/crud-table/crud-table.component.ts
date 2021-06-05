@@ -1,7 +1,6 @@
 import {ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {BaseEntity} from 'rangular-common';
+import {BaseEntity, ColumnModel} from 'rangular-common';
 import {get, map} from 'lodash';
-import {ColumnModel} from '../../models/column.model';
 import {LOCALE_TEXT} from '../../utils';
 
 @Component({
