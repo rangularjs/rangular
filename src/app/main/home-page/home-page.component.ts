@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {DialogService} from 'rangular-material';
+import {DialogService} from 'rangular-common';
 import {Item} from '../models/item.model';
 import {CustomDialogComponent} from '../custom-dialog/custom-dialog.component';
 import { MatDialog } from '@angular/material/dialog';

@@ -6,6 +6,7 @@ import {ConfirmDialogComponent} from '../confirm-dialog/confirm-dialog.component
 import {ItemSelectorDialogComponent} from '../item-selector-dialog/item-selector-dialog.component';
 import {MessageDialogComponent} from '../message-dialog/message-dialog.component';
 import {Observable} from 'rxjs';
+import {DialogService} from 'rangular-common';
 
 export interface ItemSelectorConfig {
   displayField: any;
@@ -18,10 +19,11 @@ export interface ItemSelectorConfig {
   onInit?: any;
 }
 
-@Injectable({providedIn: 'root'})
-export class DialogService {
+@Injectable()
+export class MaterialDialogService extends DialogService {
 
   constructor(private dialog: MatDialog) {
+    super();
   }
 
   /**

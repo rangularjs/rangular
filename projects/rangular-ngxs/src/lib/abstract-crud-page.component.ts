@@ -1,9 +1,8 @@
-import { OnInit, Directive } from '@angular/core';
+import {Directive, OnInit} from '@angular/core';
 import {Navigate} from '@ngxs/router-plugin';
 import {Store} from '@ngxs/store';
-import {BaseEntity, isNullOrUndefined} from 'rangular-common';
+import {BaseEntity, DialogService, isNullOrUndefined} from 'rangular-common';
 import {ColumnModel} from 'rangular-crud';
-import {DialogService} from 'rangular-material';
 import {Observable} from 'rxjs';
 import {getItems} from './shared-selectors';
 
@@ -53,7 +52,7 @@ export abstract class AbstractCrudPageComponent<T extends BaseEntity> implements
   }
 
   remove(ids: number[]) {
-    this.dialogService.confirm(this.getRemoveMessage())
+    this.dialogService.confirm(this.getRemoveMessage(), '', true)
       .afterClosed()
       .subscribe(result => {
         if (result) {
