@@ -69,7 +69,7 @@
     "@ngxs/store": "^3.7.1",
     "ag-grid-angular": "^25.1.0",
     "ag-grid-community": "^25.1.0",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.21",
     "moment-jalaali": "^0.9.1",
     "rangular-common": "file:dist/rangular-common/rangular-common-11.2.1.tgz",
     "rangular-crud": "file:dist/rangular-crud/rangular-crud-11.1.0.tgz",
