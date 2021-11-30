@@ -71,7 +71,7 @@
     "ag-grid-community": "^25.1.0",
     "lodash": "^4.17.11",
     "moment-jalaali": "^0.9.1",
-    "rangular-common": "file:dist/rangular-common/rangular-common-11.2.0.tgz",
+    "rangular-common": "file:dist/rangular-common/rangular-common-11.2.1.tgz",
     "rangular-crud": "file:dist/rangular-crud/rangular-crud-11.1.0.tgz",
     "rangular-material": "file:dist/rangular-material/rangular-material-11.1.0.tgz",
     "rangular-ngxs": "file:dist/rangular-ngxs/rangular-ngxs-11.2.0.tgz",
