@@ -1,30 +1,38 @@
-import {TdMediaService} from '@covalent/core/media';
-import { ChangeDetectorRef, OnDestroy, OnInit, Directive } from '@angular/core';
-import {Subscription} from 'rxjs';
-import {isNullOrUndefined} from 'rangular-common';
+import {ChangeDetectorRef, Directive, OnDestroy, OnInit} from '@angular/core';
+import {Subject} from 'rxjs';
+import {BreakpointObserver, Breakpoints} from '@angular/cdk/layout';
+import {takeUntil} from 'rxjs/operators';
 
 @Directive()
+// tslint:disable-next-line:directive-class-suffix
 export abstract class ScreenAwareComponent implements OnInit, OnDestroy {
 
   isSmallScreen = false;
-  screenSubscription: Subscription;
+  destroyed = new Subject<void>();
 
-  protected constructor(private media: TdMediaService,
+  protected constructor(private breakpointObserver: BreakpointObserver,
                         private changeDetector: ChangeDetectorRef) {
   }
 
   ngOnInit(): void {
-    this.screenSubscription = this.media.registerQuery('gt-sm')
+    this.breakpointObserver.observe(this.getSmallBreakpoints())
+      .pipe(takeUntil(this.destroyed))
       .subscribe(result => {
-        this.isSmallScreen = !result;
-        this.changeDetector.markForCheck();
+        this.isSmallScreen = result.matches;
+        this.changeDetector.detectChanges();
       });
   }
 
   ngOnDestroy(): void {
-    if (!isNullOrUndefined(this.screenSubscription)) {
-      this.screenSubscription.unsubscribe();
-    }
+    this.destroyed.next();
+    this.destroyed.complete();
+  }
+
+  getSmallBreakpoints(): string | string[] {
+    return [
+      Breakpoints.XSmall,
+      Breakpoints.Small,
+    ];
   }
 
 }

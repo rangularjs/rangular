@@ -4,14 +4,7 @@ import {CommonModule} from '@angular/common';
 import {CovalentCommonModule} from '@covalent/core/common';
 import {CovalentSearchModule} from '@covalent/core/search';
 import {CovalentLayoutModule} from '@covalent/core/layout';
-import {CovalentMediaModule} from '@covalent/core/media';
-import {CovalentLoadingModule} from '@covalent/core/loading';
-import {CovalentDataTableModule} from '@covalent/core/data-table';
-import {CovalentNotificationsModule} from '@covalent/core/notifications';
 import {CovalentMenuModule} from '@covalent/core/menu';
-import {CovalentPagingModule} from '@covalent/core/paging';
-import {CovalentStepsModule} from '@covalent/core/steps';
-import {CovalentVirtualScrollModule} from '@covalent/core/virtual-scroll';
 import {CovalentFileModule} from '@covalent/core/file';
 import {CovalentDialogsModule} from '@covalent/core/dialogs';
 
@@ -76,19 +69,12 @@ const MATERIAL_MODULES: any[] = [
 ];
 
 const COVALENT_MODULES: any[] = [
-  CovalentDataTableModule,
-  CovalentMediaModule,
-  CovalentLoadingModule,
-  CovalentNotificationsModule,
   CovalentLayoutModule,
   CovalentMenuModule,
-  CovalentPagingModule,
   CovalentDialogsModule,
   CovalentSearchModule,
-  CovalentStepsModule,
   CovalentCommonModule,
   CovalentDialogsModule,
-  CovalentVirtualScrollModule,
   CovalentFileModule,
 ];
 const RANGULAR_MODULES: any[] = [

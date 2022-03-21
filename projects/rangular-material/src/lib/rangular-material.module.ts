@@ -15,7 +15,6 @@ import {MatListModule} from '@angular/material/list';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {CovalentCommonModule} from '@covalent/core/common';
 import {CovalentLayoutModule} from '@covalent/core/layout';
-import {CovalentMediaModule} from '@covalent/core/media';
 import {CovalentSearchModule} from '@covalent/core/search';
 import {DialogService, RangularCommonModule} from 'rangular-common';
 import {DialogTitleComponent} from './dialog-title/dialog-title.component';
@@ -57,7 +56,6 @@ const COMPONENTS = [
     MatDividerModule,
     MatListModule,
     CovalentSearchModule,
-    CovalentMediaModule,
     CovalentLayoutModule,
     CovalentCommonModule,
     RangularCommonModule,

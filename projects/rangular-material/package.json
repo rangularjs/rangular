@@ -1,7 +1,7 @@
 {
   "name": "rangular-material",
   "description": "Angular Material Components created by the RANIS.",
-  "version": "11.1.0",
+  "version": "12.0.0",
   "keywords": [
     "angular",
     "library",
@@ -17,13 +17,12 @@
     "tslib": "^2.0.0"
   },
   "peerDependencies": {
-    "@angular/common": "^11.0.0",
-    "@angular/core": "^11.0.0",
+    "@angular/common": "^12.0.0",
+    "@angular/core": "^12.0.0",
     "lodash": "^4.0.0",
-    "@angular/animations": "^11.0.0",
-    "@angular/cdk": "^11.0.0",
-    "@angular/material": "^11.0.0",
-    "@covalent/core": "^3.1.0",
-    "rangular-common": "^11.0.0"
+    "@angular/animations": "^12.0.0",
+    "@angular/cdk": "^12.0.0",
+    "@angular/material": "^12.0.0",
+    "rangular-common": "^12.0.0"
   }
 }

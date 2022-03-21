@@ -1,5 +1,5 @@
 <div layout="row" flex class="dialog overflow-hidden">
-  <span flex *ngIf="media.query('gt-md')"></span>
+  <span flex *ngIf="!isSmallScreen"></span>
   <div layout="column"
        flex="100" flex-offset="0"
        flex-gt-sm="66" flex-offset-gt-sm="15"

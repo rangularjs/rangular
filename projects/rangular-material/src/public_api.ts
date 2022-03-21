@@ -16,4 +16,5 @@ export * from './lib/prompt-dialog/prompt-dialog.component';
 export * from './lib/form-container/form-container.component';
 export * from './lib/services/notification.service';
 export * from './lib/services/material-dialog.service';
+export * from './lib/services/loading.service';
 export * from './lib/screen-aware.component';

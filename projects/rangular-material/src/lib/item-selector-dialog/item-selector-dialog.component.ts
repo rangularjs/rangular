@@ -1,18 +1,21 @@
-import {Component, Inject, OnInit} from '@angular/core';
-import {TdMediaService} from '@covalent/core/media';
-import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import {ChangeDetectorRef, Component, Inject, OnInit} from '@angular/core';
+import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
 import {get, isFunction} from 'lodash';
+import {BreakpointObserver, Breakpoints} from '@angular/cdk/layout';
+import {ScreenAwareComponent} from '../screen-aware.component';
 
 @Component({
   selector: 'ran-item-selector-dialog',
   templateUrl: './item-selector-dialog.component.html',
   styleUrls: ['./item-selector-dialog.component.scss'],
 })
-export class ItemSelectorDialogComponent implements OnInit {
+export class ItemSelectorDialogComponent extends ScreenAwareComponent implements OnInit {
 
-  constructor(public media: TdMediaService,
+  constructor(breakpointObserver: BreakpointObserver,
+              changeDetector: ChangeDetectorRef,
               private dialogRef: MatDialogRef<ItemSelectorDialogComponent>,
               @Inject(MAT_DIALOG_DATA) public data: any) {
+    super(breakpointObserver, changeDetector);
   }
 
   ngOnInit(): void {
@@ -26,4 +29,11 @@ export class ItemSelectorDialogComponent implements OnInit {
     this.dialogRef.close(data);
   }
 
+  getSmallBreakpoints(): string | string[] {
+    return [
+      Breakpoints.XSmall,
+      Breakpoints.Small,
+      Breakpoints.Medium,
+    ];
+  }
 }
