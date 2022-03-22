@@ -1,6 +1,6 @@
 import {ChangeDetectorRef, Directive, OnDestroy, OnInit} from '@angular/core';
 import {Subject} from 'rxjs';
-import {BreakpointObserver, Breakpoints} from '@angular/cdk/layout';
+import {BreakpointObserver, Breakpoints, BreakpointState} from '@angular/cdk/layout';
 import {takeUntil} from 'rxjs/operators';
 
 @Directive()
@@ -10,17 +10,14 @@ export abstract class ScreenAwareComponent implements OnInit, OnDestroy {
   isSmallScreen = false;
   destroyed = new Subject<void>();
 
-  protected constructor(private breakpointObserver: BreakpointObserver,
-                        private changeDetector: ChangeDetectorRef) {
+  protected constructor(protected breakpointObserver: BreakpointObserver,
+                        protected changeDetector: ChangeDetectorRef) {
   }
 
   ngOnInit(): void {
     this.breakpointObserver.observe(this.getSmallBreakpoints())
       .pipe(takeUntil(this.destroyed))
-      .subscribe(result => {
-        this.isSmallScreen = result.matches;
-        this.changeDetector.detectChanges();
-      });
+      .subscribe(this.onBreakpointStateChanged);
   }
 
   ngOnDestroy(): void {
@@ -35,4 +32,8 @@ export abstract class ScreenAwareComponent implements OnInit, OnDestroy {
     ];
   }
 
+  onBreakpointStateChanged(result: BreakpointState) {
+    this.isSmallScreen = result.matches;
+    this.changeDetector.detectChanges();
+  }
 }

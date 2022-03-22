@@ -1,7 +1,7 @@
 {
   "name": "rangular-app",
   "description": "Ranis components built on Angular Material",
-  "version": "10.0.0",
+  "version": "13.0.0",
   "keywords": [
     "angular",
     "ranis",
@@ -75,7 +75,7 @@
     "rangular-ngxs": "file:dist/rangular-ngxs/rangular-ngxs-13.0.0.tgz",
     "rangular-pipes": "file:dist/rangular-pipes/rangular-pipes-13.0.0.tgz",
     "rangular-crud": "file:dist/rangular-crud/rangular-crud-13.0.0.tgz",
-    "rangular-material": "file:dist/rangular-material/rangular-material-13.0.0.tgz",
+    "rangular-material": "file:dist/rangular-material/rangular-material-13.0.1.tgz",
     "rxjs": "~6.6.3",
     "tslib": "^2.3.1",
     "zone.js": "~0.11.4"
