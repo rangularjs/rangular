@@ -7,13 +7,11 @@ import {CustomDialogComponent} from './custom-dialog/custom-dialog.component';
 import {DisconnectPageComponent} from './disconnect-page/disconnect-page.component';
 
 @NgModule({
-  imports: [
-    SharedModule,
-    MainRoutingModule,
-  ],
-  declarations: [HomePageComponent, CustomDialogComponent, DisconnectPageComponent],
-  entryComponents: [CustomDialogComponent],
-
+    imports: [
+        SharedModule,
+        MainRoutingModule,
+    ],
+    declarations: [HomePageComponent, CustomDialogComponent, DisconnectPageComponent]
 })
 export class MainModule {
 }
