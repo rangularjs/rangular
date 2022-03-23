@@ -1,5 +1,5 @@
 import {Pipe, PipeTransform} from '@angular/core';
-import * as moment_ from 'moment-jalaali';
+import moment from 'moment-jalaali';
 import {isNullOrUndefined} from 'rangular-common';
 
 @Pipe({
@@ -8,7 +8,6 @@ import {isNullOrUndefined} from 'rangular-common';
 export class JalaliPipe implements PipeTransform {
 
   transform(value: any, args?: any): any {
-    const moment = moment_;
     if (isNullOrUndefined(value)) {
       return;
     }
