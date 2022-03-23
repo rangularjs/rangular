@@ -1,9 +1,7 @@
 import {FormGroup, ValidationErrors} from '@angular/forms';
 import {isNullOrUndefinedOrEmpty} from './utils';
 import {DATE_FORMAT, J_DATE_FORMAT} from './constants';
-import * as momentImported from 'moment-jalaali';
-
-const moment = momentImported;
+import moment from 'moment-jalaali';
 
 export function dateRange(fromDateField = 'fromDate', toDateField = 'toDate') {
   return (control: FormGroup): ValidationErrors | null => {
