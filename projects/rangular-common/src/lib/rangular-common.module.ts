@@ -7,11 +7,13 @@ import {InfoService} from './common/info.service';
 import {AutofocusDirective} from './directives/autofocus.directive';
 import {ParseLink} from './common/parse-link';
 import {DataUtils} from './common/data-utils.service';
+import {ScrollEventDirective} from './directives/scroll-event.directive';
 
 const COMPONENTS = [
   RequireAuthorityDirective,
   OnlyNumberDirective,
   EnglishNumberDirective,
+  ScrollEventDirective
 ];
 
 @NgModule({
