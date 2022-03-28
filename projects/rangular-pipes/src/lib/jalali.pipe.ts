@@ -11,7 +11,6 @@ export class JalaliPipe implements PipeTransform {
     if (isNullOrUndefined(value)) {
       return;
     }
-    moment.locale('fa');
     moment.loadPersian({
       dialect: 'persian-modern'
     });
