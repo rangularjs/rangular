@@ -1,7 +1,7 @@
 {
   "name": "rangular-material",
   "description": "Angular Material Components created by the RANIS.",
-  "version": "13.0.2",
+  "version": "13.0.3",
   "keywords": [
     "angular",
     "library",
@@ -24,6 +24,6 @@
     "@angular/cdk": "^13.0.0",
     "@angular/material": "^13.0.0",
     "rangular-common": "^13.0.0",
-    "@covalent/core": "^4.0.0"
+    "@covalent/core": "^4.1.0"
   }
 }
