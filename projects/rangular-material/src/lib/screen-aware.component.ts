@@ -14,7 +14,7 @@ export abstract class ScreenAwareComponent implements OnInit, OnDestroy {
                         protected changeDetector: ChangeDetectorRef) {
     breakpointObserver.observe(this.getSmallBreakpoints())
       .pipe(takeUntil(this.destroyed))
-      .subscribe(this.onBreakpointStateChanged);
+      .subscribe(result => this.onBreakpointStateChanged(result));
   }
 
   ngOnInit(): void {
