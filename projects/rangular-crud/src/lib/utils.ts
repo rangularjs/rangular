@@ -75,8 +75,24 @@ export const LOCALE_TEXT = {
   noRowsToShow: 'در حال حاضر داده ای موجود نیست',
 
   // standard menu
+  pinColumn: 'پین کردن ستون',
+  pinLeft: 'پین به چپ',
+  pinRight: 'پین به راست',
+  noPin: 'حذف پین',
+  autosizeThiscolumn: 'تنظیم اتومات اندازه این ستون',
+  autosizeAllColumns: 'تنظیم اتومات اندازه همه ستون‌ها',
+  groupBy: 'گروه‌بندی',
+  ungroupBy: 'حذف گروه‌بندی',
+  resetColumns: 'ربست کردن ستون‌ها',
+  expandAll: 'بازکدن همه',
+  collapseAll: 'بستن همه',
   copy: 'کپی',
   copyWithHeaders: 'کپی با هدر',
+  paste: 'جایگذاری',
+  copyWithHeaderGroups: 'کپی با هدر گروه‌بندی',
+  export: 'خروجی',
+  csvExport: 'خروجی CSV',
+  excelExport: 'خروجی اکسل',
 
   notEquals: 'نامساوی',
 

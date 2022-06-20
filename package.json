@@ -74,8 +74,8 @@
     "rangular-common": "file:dist/rangular-common/rangular-common-13.1.0.tgz",
     "rangular-ngxs": "file:dist/rangular-ngxs/rangular-ngxs-13.0.0.tgz",
     "rangular-pipes": "file:dist/rangular-pipes/rangular-pipes-13.0.2.tgz",
-    "rangular-crud": "file:dist/rangular-crud/rangular-crud-13.0.1.tgz",
-    "rangular-material": "file:dist/rangular-material/rangular-material-13.0.3.tgz",
+    "rangular-crud": "file:dist/rangular-crud/rangular-crud-13.0.2.tgz",
+    "rangular-material": "file:dist/rangular-material/rangular-material-13.0.4.tgz",
     "rxjs": "~7.4.0",
     "tslib": "^2.3.1",
     "zone.js": "~0.11.4"
