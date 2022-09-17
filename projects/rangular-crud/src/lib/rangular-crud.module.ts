@@ -37,7 +37,7 @@ const COMPONENTS = [CrudTableComponent, CheckboxCellComponent, ButtonCellCompone
     CovalentCommonModule,
     RangularCommonModule,
     RangularMaterialModule,
-    AgGridModule.withComponents([CheckboxCellComponent, ButtonCellComponent]),
+    AgGridModule,
   ],
 })
 export class RangularCrudModule {
