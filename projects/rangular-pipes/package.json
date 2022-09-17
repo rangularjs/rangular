@@ -1,7 +1,7 @@
 {
   "name": "rangular-pipes",
   "description": "Angular pipes created by the RANIS.",
-  "version": "13.0.2",
+  "version": "14.0.0",
   "keywords": [
     "angular",
     "library",
@@ -17,9 +17,9 @@
     "tslib": "^2.0.0"
   },
   "peerDependencies": {
-    "@angular/common": "^13.0.0",
-    "@angular/core": "^13.0.0",
-    "rangular-common": "^13.0.0",
+    "@angular/common": "^14.0.0",
+    "@angular/core": "^14.0.0",
+    "rangular-common": "^14.0.0",
     "lodash": "^4.0.0"
   }
 }

@@ -262,7 +262,6 @@
       }
     }
   },
-  "defaultProject": "rangular-app",
   "cli": {
     "analytics": "3492c51b-27c3-460f-937c-f34b346571ec"
   }

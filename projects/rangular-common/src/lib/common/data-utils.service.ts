@@ -1,5 +1,5 @@
 import {ElementRef, Injectable} from '@angular/core';
-import {FormGroup} from '@angular/forms';
+import {UntypedFormGroup} from '@angular/forms';
 import {Observable, Observer} from 'rxjs';
 
 export type FileLoadErrorType = 'not.image' | 'could.not.extract';
@@ -114,7 +114,7 @@ export class DataUtils {
    * @returns an observable that loads file to form field and completes if sussessful
    *          or returns error as FileLoadError on failure
    */
-  loadFileFromEventToForm(event: Event, editForm: FormGroup, field: string, isImage: boolean): Observable<void> {
+  loadFileFromEventToForm(event: Event, editForm: UntypedFormGroup, field: string, isImage: boolean): Observable<void> {
     return new Observable((observer: Observer<void>) => {
       const eventTarget: HTMLInputElement = event.target as HTMLInputElement;
       if (eventTarget.files && eventTarget.files[0]) {
@@ -159,7 +159,7 @@ export class DataUtils {
    * @returns an observable that loads file to form field and completes if sussessful
    *          or returns error as JhiFileLoadError on failure
    */
-  loadFileToForm(file: File, editForm: FormGroup, field: string, isImage: boolean): Observable<void> {
+  loadFileToForm(file: File, editForm: UntypedFormGroup, field: string, isImage: boolean): Observable<void> {
     return new Observable((observer: Observer<void>) => {
       if (file) {
         if (isImage && !file.type.startsWith('image/')) {

@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {ComponentFixture, TestBed} from '@angular/core/testing';
 import {EnglishNumberDirective} from './english-number.directive';
-import {FormControl, FormGroup, FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {UntypedFormControl, UntypedFormGroup, FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {By} from '@angular/platform-browser';
 
 @Component({
@@ -12,8 +12,8 @@ import {By} from '@angular/platform-browser';
   `
 })
 export class TestComponent {
-  form = new FormGroup({
-    name: new FormControl()
+  form = new UntypedFormGroup({
+    name: new UntypedFormControl()
   });
 }
 

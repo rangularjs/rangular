@@ -1,5 +1,5 @@
 import {Component, Inject, OnInit} from '@angular/core';
-import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {UntypedFormControl, UntypedFormGroup, Validators} from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import {get} from 'lodash';
 import {isNullOrUndefined} from 'rangular-common';
@@ -11,8 +11,8 @@ import {isNullOrUndefined} from 'rangular-common';
 })
 export class PromptDialogComponent implements OnInit {
 
-  form = new FormGroup({
-    value: new FormControl(null, Validators.required)
+  form = new UntypedFormGroup({
+    value: new UntypedFormControl(null, Validators.required)
   });
 
   submitted = false;

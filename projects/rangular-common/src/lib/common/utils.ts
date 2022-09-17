@@ -1,12 +1,12 @@
-import {FormArray, FormGroup} from '@angular/forms';
+import {UntypedFormArray, UntypedFormGroup} from '@angular/forms';
 import {BaseEntity} from './base.entity';
 import {get, isNull, isUndefined, trim} from 'lodash';
 import {EnumModel} from './enum.model';
 
-export function setFormValuesFromObject(form: FormGroup, obj: any) {
+export function setFormValuesFromObject(form: UntypedFormGroup, obj: any) {
   Object.keys(obj).forEach(key => {
     const item = form.get(key);
-    if (item && !(item instanceof FormArray) && !(item instanceof FormGroup)) {
+    if (item && !(item instanceof UntypedFormArray) && !(item instanceof UntypedFormGroup)) {
       item.setValue(obj[key]);
     }
   });

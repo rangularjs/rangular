@@ -1,6 +1,6 @@
 import {AbstractFormComponent} from './abstract-form.component';
 import {BaseEntity} from './base.entity';
-import {FormArray, FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators} from '@angular/forms';
+import {UntypedFormArray, UntypedFormControl, UntypedFormGroup, FormsModule, ReactiveFormsModule, Validators} from '@angular/forms';
 import {Component} from '@angular/core';
 import {ComponentFixture, TestBed} from '@angular/core/testing';
 
@@ -23,13 +23,13 @@ class TestEntity implements BaseEntity {
     </form>`
 })
 export class TestFormComponent extends AbstractFormComponent<TestEntity> {
-  createFormGroup(): FormGroup {
-    return new FormGroup({
-      id: new FormControl(null, Validators.required),
-      data: new FormGroup({
-        name: new FormControl()
+  createFormGroup(): UntypedFormGroup {
+    return new UntypedFormGroup({
+      id: new UntypedFormControl(null, Validators.required),
+      data: new UntypedFormGroup({
+        name: new UntypedFormControl()
       }),
-      items: new FormArray([])
+      items: new UntypedFormArray([])
     });
   }
 }

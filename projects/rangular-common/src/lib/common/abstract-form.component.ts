@@ -1,5 +1,5 @@
 import { EventEmitter, Input, Output, Directive } from '@angular/core';
-import {FormGroup} from '@angular/forms';
+import {UntypedFormGroup} from '@angular/forms';
 import {isNullOrUndefined} from './utils';
 
 /**
@@ -11,7 +11,7 @@ export abstract class AbstractFormComponent<T> {
   /**
    * Local form variable.
    */
-  form: FormGroup = this.createFormGroup();
+  form: UntypedFormGroup = this.createFormGroup();
 
   /**
    * This event fire if the form is valid.
@@ -78,6 +78,6 @@ export abstract class AbstractFormComponent<T> {
   /**
    * This abstract function make the form group.
    */
-  abstract createFormGroup(): FormGroup;
+  abstract createFormGroup(): UntypedFormGroup;
 
 }
